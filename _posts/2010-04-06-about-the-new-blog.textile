@@ -1,0 +1,10 @@
+---
+layout: post
+title: About the New Blog
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 6th Apr 2010
+
+Nothing to see here, but there will be

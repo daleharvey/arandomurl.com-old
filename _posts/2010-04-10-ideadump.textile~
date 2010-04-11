@@ -1,0 +1,71 @@
+---
+layout: post
+title: Braindump of Ideas I would like to see built
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 6th Apr 2010
+
+Some of these I have worked on and others are just thoughts that I probably wont get time to touch. I will update this post from time to time with new ideas and updates. If anyone has worked on any of these ideas then please tell me about it, I would love to see what you have built.
+
+h2. Web Chat Client
+
+I am just not keen on the UI of any chat clients around there, "empathy":http://live.gnome.org/Empathy / "adium":http://adium.im/ / "pidgin":http://www.pidgin.im/ / "mibbit":http://mibbit.com etc so I started writing my own, it is almost usable but not quite. Things I think are important:
+
+*Minimal*
+When I am chatting all I want to see is a place to enter text, other peoples posts, tabs to other chat rooms and 1/2 navigation options.
+*Great Looking*
+If there isn't much on-screen it should all look good.
+*Clever*
+Remember where I have been, I hate typing out chat room names, and I don't want to set a favourite for every room I think I might go to again.
+*Cross plaform*
+Work on all computers (and sync across them).
+
+My first version is just a plain JavaScript page that connects to jabber with ejabberds in-built bosh server. It does all the above apart from syncing, will release when its somewhat usable.
+
+h2. Canvas/WebGL/JavaScript Game
+
+A simple and slightly addictive JavaScript game, partly because I would like to publish a game, partly because I would like to play it and partly because I think these are all promising and exciting technologies.
+
+I have made one or two half assed attempts at this, a clone of pacman and a clone of skifree.
+
+"Torus - 3D Tetris":http://www.benjoffe.com/code/games/torus/ and "Astroids":http://www.chromeexperiments.com/detail/asteroids-game/ are good examples.
+
+h2. MMORPG
+
+I have been disappointed with computer games for a while, they are either big titles targeted towards experienced gamers, or a few minutes distraction in flash. First the Wii and then Facebook games like Zyngas Farmville have started bridging this gap but I think a lot more can be done.
+
+I want a game where the gameplay is time limited, I avoid computer games because if they are any good, they become a massive drain on my time, I also do not want to not be able to compete against people who are willing to spend 10+ hours a week playing them. I want it available online on the different computer I access the internet and not require a fancy gaming rig.
+
+"Urban Dead":http://www.urbandead.com/ and "My Brute":http://www.mybrute.com/ are a good example of games which put a limit on how much you can play in a day (usually amounts to 20 minutes) that managed to keep me engaged for a while. Something along the lines of Settler / Command and Conquer I think would work great.
+
+I havent got anywhere near starting this one.
+
+h2. Wiki backed by GIT / A good place to share information about Erlang.
+
+I wanted to put an Erlang wiki online but didn't particularly love any of the implementations around, and was slightly embarrassed about putting an Erlang focused site up in PHP. 
+
+I spent an afternoon on this, but it is up "http://erlangotp.com/":http://erlangotp.com/ and the source at "http://github.com/daleharvey/erlangotp.com":http://github.com/daleharvey/erlangotp.com
+
+There is still lots to-do, I am hoping to finish it up and announce it soon though.
+
+h2. WYSIWYG HTML Editor
+
+I am working on one of these but for an entirely different audience, I want one of these for me, someone who knows HTML/CSS/JavaScript very well. I gave up using Photoshop to mockup webpages as it was a tedious process and far too removed from the actual web page I was creating, but using a text editor shouldnt be the next best option.
+
+It should have a few layout templates, produce nice code, let you work with the code by hand, it doesn't need to provide fully featured layout manager but should let me fiddle with CSS and such a lot easier than editing code does.
+
+Right now "my pastebin":http://pastebin.me/ (by accident) became one of my favourite html editors, purely because it switches between html/code view nicely, and firebug is also good for testing small tweaks to CSS, there should be better options. 
+
+h2. Calender Web Service
+
+I recently spent time looking for an events calendar web service that let multiple contribute events and post the calendar on a website.
+
+Google calendar was pretty much the only option and I hated it, its annoying to share, has no decent options for embedding and its annoying to even find out where the thing is. I have heard this question come up quite a few times since.
+
+h2. Photo Gallery
+
+More of another personal itch and excuse to play around with fancy html5 stuff. I post all my photos to "my Flickr":http://www.flickr.com/photos/daleharvey/ and would like a nicer ui for browsing them, it would probably work with the Flickr api and meta data applied to the photos.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1255980
