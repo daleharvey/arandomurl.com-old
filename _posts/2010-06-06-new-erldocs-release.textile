@@ -1,0 +1,30 @@
+---
+layout: post
+title: New erldocs Release
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 5th July 2010
+
+Seeing the release of R14A I decided it was about time to update "erldocs.com":http://erldocs.com. I introduced a few changes to the UI and made it a lot easier to generate erldocs documentation for your own erlang projects.
+
+<a href="/random/erldocs.png"><img src="/random/erldocs.png" style="width:40em" /></a>
+
+h2. Building Your own erldocs
+
+I have improved the build process to make it easier to include any erlang libraries you would like, this allows people to document their own libraries and to setup personal erldocs that include the libraries they use, I put up a simple example that includes R14A + "elib":http://github.com/joearms/elib1 + "Mochiweb":http://github.com/mochi/mochiweb/ - "here":http://erldocs.com/R14Aextra/
+
+h2. UI Changes
+
+It was annoying me that I couldnt navigate the documentation with my keyboard, to start searching you had to focus the search box which meant randomly tabbing for a while or pressing it with the mouse. Pressing TAB now toggles between search and browse states, this lets people use the keyboard to scroll the page when in the browse mode, while still using the same keys to navigate search results in search mode.
+
+h2. In the Future
+
+I still need to start generating pages for non reference documentation, but given the erlang documentation xml formats that might be a PITA.
+
+Probably more likely to come next is comments, I used to find the comments in the PHP documentation very helpful and I think erlang could use a similiar resource.
+
+~(I should probably make the code suck less, especially the nasty regex templating I do, but hey it works)~
+
+
