@@ -25,6 +25,6 @@ I still need to start generating pages for non reference documentation, but give
 
 Probably more likely to come next is comments, I used to find the comments in the PHP documentation very helpful and I think erlang could use a similiar resource.
 
-~(I should probably make the code suck less, especially the nasty regex templating I do, but hey it works)~
+h6. (I should probably make the code suck less, especially the nasty regex templating I do, but hey it works)
 
 
