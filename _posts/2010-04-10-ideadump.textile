@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Braindump of Ideas I would like to see built
+title: Braindump of Ideas I would like to build / see built
 ---
 
 h1(title). {{ page.title }}
@@ -23,14 +23,6 @@ Remember where I have been, I hate typing out chat room names, and I don't want 
 Work on all computers (and sync across them).
 
 My first version is just a plain JavaScript page that connects to jabber with ejabberds in-built bosh server. It does all the above apart from syncing, will release when its somewhat usable.
-
-h2. Canvas/WebGL/JavaScript Game
-
-A simple and slightly addictive JavaScript game, partly because I would like to publish a game, partly because I would like to play it and partly because I think these are all promising and exciting technologies.
-
-I have made one or two half assed attempts at this, a clone of pacman and a clone of skifree.
-
-"Torus - 3D Tetris":http://www.benjoffe.com/code/games/torus/ and "Astroids":http://www.chromeexperiments.com/detail/asteroids-game/ are good examples.
 
 h2. MMORPG
 
@@ -63,6 +55,14 @@ h2. Calendar Web Service
 I recently spent time looking for an events calendar web service that let multiple contribute events and post the calendar on a website.
 
 Google calendar was pretty much the only option and I hated it, its annoying to share, has no decent options for embedding and its annoying to even find out where the thing is. I have heard this question come up quite a few times since.
+
+h2. Canvas/WebGL/JavaScript Game
+
+A simple and slightly addictive JavaScript game, partly because I would like to publish a game, partly because I would like to play it and partly because I think these are all promising and exciting technologies.
+
+I have made one or two half assed attempts at this, a clone of pacman and a clone of skifree.
+
+"Torus - 3D Tetris":http://www.benjoffe.com/code/games/torus/ and "Astroids":http://www.chromeexperiments.com/detail/asteroids-game/ are good examples.
 
 h2. Photo Gallery
 
