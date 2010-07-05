@@ -13,9 +13,9 @@ After a long time in waiting, the new "techmeetup website":http://techmeetup.co.
 
 h2. Why we started it
 
-The old techmeetup site was WordPress based, WordPress was designed mainly to be a easy to setup blogging platform for those that couldnt (or didnt want to) write their own and it fills that role well.
+The old techmeetup site was WordPress based, WordPress is designed to be an easy to set up blogging platform for those that couldn't (or didn't want to) write their own and it fills that role well.
 
-However for a community of awesome web talent it was a set of handcuffs, realistically only one person could do any work on the site, and when they did it had to be within WordPress's jurisdiction, hoping there was a plugin to do X and the Y plugin wouldnt break.
+However for a community of awesome web talent it was a set of handcuffs, realistically only one person could do any work on the site, and when they did it had to be within WordPress’s jurisdiction, hoping there was a plugin to do X and the Y plugin wouldn't break.
 
 At the "Royal Society":http://royalsocietyofhackers.tumblr.com/ Oli and I decided to do away with the WordPress install and start from scratch on a new site, the main impetus wasnt really the new site which isnt particularly different or impressive, but to lay the foundations so that we can all work together to build the best online community to support what already happens around techmeetup.
 
@@ -23,7 +23,7 @@ h2. So what is there
 
 We decided to go with Django as it is popular within the community ("Peter Braden's talk on Django":http://vimeo.com/3770381), Oli wrote a first version with the blog and the core of the site, and not knowing Python or Django, I learnt them by building up the rest of the site (so excuse the nasty code, its probably mine). 
 
-The source code for the site is up on "github":http://github.com/daleharvey/techmeetup so right now you can fork the site, make changes and fix bugs.
+The source code for the site is up on "github":http://github.com/daleharvey/techmeetup so you can fork the site, make changes and fix bugs.
 
 Along with migrating the old site over we made a few small and often requested changes, added disqus comments to make it easier for people to comment and made sure the information about the next meetups are clearly shown on the front page as well as the different announcement and discussion google groups.
 
@@ -31,6 +31,6 @@ h2. So what is planned
 
 The next 2 things that I have planned to work on is the "calendar":http://techmeetup.co.uk/calendar/ which will be a place to keep up to date with all of the tech/business/startup related events happening around Scotland (and beyond). 
 
-The other major pressing issue is the announcements and discussions lists, right now we have 2 groups of people, some just want announcements and others want to be able to talk about the announcements and more. It is impossible to have google groups forward from one group to another so we currently have people replying to the announcements list which is annoying for those just wanting announcements.
+The other major pressing issue is the announcements and discussions lists, now we have 2 groups of people, some just want announcements and others want to be able to talk about the announcements and more. It is impossible to have google groups forward from one group to another so we have people replying to the announcements list which is annoying for those just wanting announcements.
 
 If you have ideas for the site, either new features or improvements then please talk to us about it at the next techmeetup or come along to the Royal Society where a few of us will be working on it.
