@@ -1,0 +1,39 @@
+---
+layout: post
+title: Design Tips for Programmers
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 7th July 2010
+
+Every once in a while you come across a website or application with a face only a mother could love, well, its mother was probably a programmer. I am one of those aesthetically challenged programmers so in an effort to reeducate myself I am pretending that I know enough to give you, the faithful reader, some tips to help you design websites (or applications) that don't leave the users wanting to scratch their eyes out.
+
+h2. DESIGN IS IMPORTANT
+
+This is pretty important, that is why it's in all caps. If you don't appreciate that design is a fundamentally important part of your software, then no tips in the world can help. Design is not just some polish on your wonderful software that magically makes it pretty, as Steve Jobs said <em>"Design is how it works"</em> not just how it looks. "These slides":http://www.slideshare.net/novaurora/10-things-ceos-need-to-know-about-design are aimed towards CEOs but I think they are useful for anyone to gain understanding of why design is important.
+
+h2. Use the <span style="text-decoration:line-through">force</span> Grid
+
+An easy place to start, with some small attention to detail you can vastly improve the aesthetics of your application. Inconsistent spacing while not immediately obvious can unknowingly irritate people using your software. "Khoi Vinh":http://www.subtraction.com/2009/11/30/really-basic-maths has a series of good practical posts about implementing grid layouts and look through the gallery on the "960.gs":http://960.gs website for some really strong examples of grids in action.
+
+A useful exercise is to print out your screens and use a ruler to draw lines following all the visual elements on page, it quickly becomes very obvious where you have work to do.
+
+h2. Consistency is key
+
+To follow on from the above point it is not just inconsistent spacing that unknowingly irritates users, colours, font styles, faces, and sizes can all add to the visual noise. Some rules of thumbs to help mitigate these are: 
+ * Reserve serif fonts for titles, sans fonts are easier to read on a screen.
+ * Use tag selectors(h1, h2, h3, p etc) to define font-size and family, try to avoid defining these styles inside ids or classes.
+ * Restrict your colour palette, dont randomly type RGB values (and probably best to avoid the named colours) "Adobe Kuler":http://kuler.adobe.com/ is a great resource for picking complimentary colours.
+
+h2. Less is more
+
+Adding features is not a zero sum game, each thing you add to the UI is directly competing with everything else and it doesn't take long before you completely overload the user with options. The hard fact is if a user cannot learn how to use a feature, it might as well not exist. Documentation and tutorials can help, but they should be reserved for complicated feature that users are already highly motivated to complete, sometimes you just need to take the hard decision to kill features to simplify the UI.
+
+h2. You are not your user
+
+Remember you are familiar with your software, you might even use it every day whereas your users probably don't. Every time you work on your design try to look at it through the eyes of a fresh user, keep their goals in mind and try to forget your previous knowledge.
+
+Of course ultimately this is impossible and there is no substitute for testing with real users. "Feedback Army":http://www.feedbackarmy.com and "User Testing":http://usertesting.com are services that offer quick and convenient testing with online users. Above all, spend as much time as you can sitting with users using your software, if you are anything like me you will be amazed at how utterly wrong your assumptions can be.
+
+Hopefully this was useful to you, if not please feel free to heckle and ask for your money back, now let's get on and make software that little bit less ugly.
