@@ -39,3 +39,9 @@ Of course ultimately this is impossible and there is no substitute for testing w
 Hopefully this was useful to you, if not please feel free to heckle and ask for your money back, now let's get on and make software that little bit less ugly.
 
 "Comment on Hacker News":http://news.ycombinator.com/item?id=1489716
+
+h2. More Resources
+
+ * "Design for developers: Making your frontend Suck Less":http://blip.tv/file/3685673/
+ * "Designing for the web":http://designingfortheweb.co.uk/
+ * "Design for the Coder's Mind":http://www.kadavy.net/blog/posts/design-for-the-coders-mind-reverse-engineering-visual-design/
