@@ -7,7 +7,7 @@ h1(title). {{ page.title }}
 
 div(meta). 7th July 2010
 
-Every once in a while you come across a website or application with a face only a mother could love, well, its mother was probably a programmer. I am one of those aesthetically challenged programmers so in an effort to reeducate myself I am pretending that I know enough to give you, the faithful reader, some tips to help you design websites (or applications) that don't leave the users wanting to scratch their eyes out.
+Every once in a while, you come across a website or application with a face only a mother could love, well, its mother was probably a programmer. I am one of those aesthetically challenged programmers so in an effort to reeducate myself I am pretending that I know enough to give you, the faithful reader, some tips to help you design websites (or applications) that don't leave the users wanting to scratch their eyes out.
 
 h2. DESIGN IS IMPORTANT
 
@@ -28,7 +28,7 @@ To follow on from the above point it is not just inconsistent spacing that unkno
 
 h2. Less is more
 
-Adding features is not a zero sum game, each thing you add to the UI is directly competing with everything else and it doesn't take long before you completely overload the user with options. The hard fact is if a user cannot learn how to use a feature, it might as well not exist. Documentation and tutorials can help, but they should be reserved for complicated feature that users are already highly motivated to complete, sometimes you just need to take the hard decision to kill features to simplify the UI.
+Adding features is a zero sum game, each thing you add to the UI is directly competing with everything else and it doesn't take long before you completely overload the user with options. The hard fact is if a user cannot learn how to use a feature, it might as well not exist. Documentation and tutorials can help, but they should be reserved for complicated feature that users are already highly motivated to complete, sometimes you just need to take the hard decision to kill features to simplify the UI.
 
 h2. You are not your user
 
@@ -37,3 +37,5 @@ Remember you are familiar with your software, you might even use it every day wh
 Of course ultimately this is impossible and there is no substitute for testing with real users. "Feedback Army":http://www.feedbackarmy.com and "User Testing":http://usertesting.com are services that offer quick and convenient testing with online users. Above all, spend as much time as you can sitting with users using your software, if you are anything like me you will be amazed at how utterly wrong your assumptions can be.
 
 Hopefully this was useful to you, if not please feel free to heckle and ask for your money back, now let's get on and make software that little bit less ugly.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1489716
