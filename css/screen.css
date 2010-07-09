@@ -1,4 +1,3 @@
-
 /*****************************************************************************/
 /*
 /* Common
@@ -127,7 +126,7 @@ header {
 }
 
 header div {
-    width:40em;
+    width:45em;
     margin:0px auto;
 }
 
@@ -150,7 +149,7 @@ header a:hover {
 
 .site {
     text-align: justify;
-    width: 40em;
+    width: 45em;
     margin: 2em auto 2em auto;
 }
 
@@ -252,3 +251,8 @@ header a:hover {
   #related h2 {
     margin-bottom: 0;
   }
+
+.reviewrefer { width: 150px;  }
+.reviewrefer img { width: 150px; margin: 20px; padding:5px; background:#EFEFEF;}
+
+.reviewrefer img:hover { background:#666; }

@@ -9,7 +9,7 @@ div(meta). 5th July 2010
 
 Seeing the release of R14A I decided it was about time to update "erldocs.com":http://erldocs.com. I introduced a few changes to the UI and made it a lot easier to generate erldocs documentation for your own erlang projects.
 
-<a href="/random/erldocs.png"><img src="/random/erldocs.png" style="width:40em" /></a>
+<a href="/random/erldocs.png"><img src="/random/erldocs.png" style="width:45em" /></a>
 
 h2. Building Your own erldocs
 

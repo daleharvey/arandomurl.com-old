@@ -9,7 +9,7 @@ div(meta). 5th July 2010
 
 After a long time in waiting, the new "techmeetup website":http://techmeetup.co.uk is now live! I will write a much longer and more interesting post once the dust has settled, but for now will just quickly mention how it started and where it is going.
 
-<a href="/random/techmeetup.png"><img src="/random/techmeetup.png" style="width:40em" /></a>
+<a href="/random/techmeetup.png"><img src="/random/techmeetup.png" style="width:45em" /></a>
 
 h2. Why we started it
 
