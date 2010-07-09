@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Terrible Review of Entrepreneurs Guide to Customer Development
+title: A Terrible Review of The Entrepreneur's Guide to Customer Development
 ---
 
 h1(title). {{ page.title }}
