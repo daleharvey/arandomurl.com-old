@@ -9,7 +9,7 @@ div(meta). 9th July 2010
 
 I tried writing a long indepth review of this book, but it (my review) was boring and full of fluff, so you get this instead.
 
-For those not familiar with Customer Development, it is basically test driven development applied to a business. It teaches you how to test your business propositions from imagination all the way up to profitability and beyond. Young technical founders are constantly advised that their startup will not live or die by the features they code but Customer Development was the first explanation that really made me understand why that is true.
+For those not familiar with Customer Development, it is basically test driven development applied to a business. It teaches you how to test your business propositions from imagination all the way up to profitability and beyond. Young technical founders are constantly advised that their startup will not live or die by the features they code but Customer Development was the first explanation that really made me understand why that is true and what I could do about it.
 
 The Entrepreneur's Guide to Customer Development(CustDev) by Brant Cooper and Patrick Vlaskovits is the follow up to 4 steps to the Epiphany(4steps) by Steve Blank. 4steps is a great book that kicked off the recent focus towards Customer Development, however it can be a fairly dry and due to its background in enterprise sales has a lot of content that isnt relevant to the current crop of web 2.0 startups that are learning from it.
 
