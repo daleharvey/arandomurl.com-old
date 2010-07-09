@@ -17,6 +17,8 @@ CustDev is an attempt to distill the key points from 4steps into an easily manag
 
 If you are working on a startup, you should buy both Entrepreneur's Guide to Customer Development and 4 Steps to the Epiphany, if it went to a battle to the death then 4steps would win, but CustDev is cheap and is a brilliant introduction to the Customer Development process which is then extremely thouroughly dissected in 4steps.
 
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1500542
+
 <script type="text/javascript">
 	var flattr_url = 'http://arandomurl.com/2010/07/09/a-terrible-review-of-entrepreneurs-guide-to-customer-development.html';
 	var flattr_btn='compact';
