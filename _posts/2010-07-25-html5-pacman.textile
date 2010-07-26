@@ -50,12 +50,7 @@ h2. Issues
 
 h5. Configure your server to serve media files
 
-If your audio works locally, but not from a server, remember to configure your server to serve media files with the correct media types. I had to add this to <code>/etc/nginx/mime.types</code>
-<pre>
-video/ogg                             ogg;
-audio/wav                             wav;
-font/ttf                              ttf;
-</pre>
+If your audio works locally, but not from a server, remember to configure your server to serve media files with the correct media types. I had to add <code>   video/ogg                             ogg;</code> to <code>/etc/nginx/mime.types</code>
 
 h5. Checking the progress of a file loading
 
