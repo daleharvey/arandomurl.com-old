@@ -1,0 +1,66 @@
+---
+layout: post
+title: HTML5 Pacman
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 25th July 2010
+
+<link rel="stylesheet" href="/random/pacman.css" />
+
+<div id="shim">shim for font face</div>
+<div id="pacman"></div>
+
+<script src="/random/pacman/pacman.js"></script>
+<script>
+    var el = document.getElementById("pacman");
+
+    function supports_canvas() {
+      return !!document.createElement('canvas').getContext;
+    };
+
+    function supports_local_storage() {
+      return ('localStorage' in window) && window['localStorage'] !== null;
+    };
+
+    if (supports_canvas() && supports_local_storage()) {
+      window.setTimeout(function () { PACMAN.init(el, "/random/pacman/"); }, 0);
+    } else { 
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and probably Safari)</small>";
+    }
+</script>
+
+This is most of the Pacman game everyone knows and loves. It isnt a complete implementation yet and I do plan on working some more on it, however it should mostly be playable. (who knew the ghosts have a "strategy!":http://home.comcast.net/~jpittman2/pacman/pacmandossier.html)
+
+Why? I wanted to play with new web technologies so writing a simple browser game seemed like a good idea. It currently uses localStorage, HTML5 Audio, Canvas and @font-face. Here are some of the issues and bugs I have had while writing the game, hopefully it might prevent some poor web developer throwing their laptop out the window.
+
+h2. Things to consider
+
+ * Performance - A lot of focus in the Flash vs Web arguments are focused on performance and CPU, while Flash has an initial performance hit which is unacceptable for minor things such as displaying text, for writing games it is reasonably mature and optimised, although my canvas implementation will have lots of room for improvement it is probably quite close to a naive Flash implementation but takes a lot more CPU.
+
+ * Integration - There are already benefits to HTML over Flash in this game, no more having to click into the game and losing focus when you click on the page, you can scroll up and down with your keyboard and start playing the game without touching your mouse. This does mean you need to worry about conflicting events between the game and the page though.
+
+ * Canvas vs HTML/SVG - Canvas is a api to do 2d raster drawing and SVG is vector based. This means within canvas you cannot "move" things, you need to delete the old version and draw the new one. Canvas gives you more fine grained control over what work is done when drawing and theoretically can be more performant, it is however less convenient.
+
+ * Drawing is hard, figuring out all the parameters to functions like quadraticCurveTo can be tricky and there isnt much tool support (such as Inkscape for SVG), I dont think it would be too hard to write a little webtool that lets you draw shapes and output the canvas code.
+
+h2. Issues
+
+h5. Configure your server to serve media files
+
+If your audio works locally, but not from a server, remember to configure your server to serve media files with the correct media types. I had to add this to <code>/etc/nginx/mime.types</code>
+<pre>
+video/ogg                             ogg;
+audio/wav                             wav;
+font/ttf                              ttf;
+</pre>
+
+h5. Checking the progress of a file loading
+
+Firefox and Webkit implement different ways to determine if a media file is loaded, firefox supports the more well documented progress event attributes (<code>e.total</code> and <code>e.loaded</code>) however this has been removed from the w3c standard which is supported by Webkit where you access the duration and buffered attributes on the audio object. If you just want to find out if a whole audio file has loaded, look for the <code>canplaythrough</code> event.
+
+h5. Looping Audio
+
+I could not find a way to reliably loop sound, the loop attribute is not currently supported in firefox "this blog":http://forestmist.org/2010/04/html5-audio-loops/ provides a workaround however the ended event has a 2/3 second delay on ubuntu, I havent found a way round that yet.

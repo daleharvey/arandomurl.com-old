@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'BDCartoonShoutRegular';
+    src: url('./pacman/BD_Cartoon_Shout-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+#shim { 
+    font-family: BDCartoonShoutRegular; 
+    position:absolute; 
+    visibility:hidden; 
+}
+#pacman { 
+    width:412px; 
+    height:450px; 
+    margin:20px auto; 
+}
