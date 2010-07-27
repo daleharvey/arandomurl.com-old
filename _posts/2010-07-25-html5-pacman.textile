@@ -34,8 +34,10 @@ function supportsOggAudio() {
 
     function supports_audio() { 
       var myAudio = document.createElement('audio');
-      var canPlayOGG = !!(myAudio.canPlayType('audio/ogg').replace(/no/, ''));
-      var canPlayMP3 = !!(myAudio.canPlayType('audio/mpeg').replace(/no/, ''));
+      var canPlayOGG = typeof myAudio.canPlayType === "function" && 
+        !!(myAudio.canPlayType('audio/ogg').replace(/no/, ''));
+      var canPlayMP3 = typeof myAudio.canPlayType === "function" && 
+        !!(myAudio.canPlayType('audio/mpeg').replace(/no/, ''));
       return canPlayOGG || canPlayMP3;
     };
 
