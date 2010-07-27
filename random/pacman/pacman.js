@@ -1200,10 +1200,6 @@ var PACMAN = (function () {
         var myAudio = document.createElement('audio');
         var canPlayOGG = !!(myAudio.canPlayType('audio/ogg').replace(/no/, ''));
         var canPlayMP3 = !!(myAudio.canPlayType('audio/mpeg').replace(/no/, ''));
-
-        if (!canPlayOGG || !canPlayMP3) {
-          // hammer time.
-        }
         var extension = canPlayOGG ? 'ogg' : 'mp3';
 
         var audio_files = [
