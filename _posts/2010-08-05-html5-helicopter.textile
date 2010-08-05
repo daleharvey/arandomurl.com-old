@@ -1,0 +1,75 @@
+---
+layout: post
+title: HTML5 Helicopter
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 5th August 2010
+
+  <span style="font-family:SilkScreenBold;"> </span>
+  <span style="font-family:SilkScreen;"> </span>
+
+  <div id="helicopter"></div>
+
+  <script src="/random/helicopter/helicopter.js"></script>
+  <script src="/random/helicopter/modernizr-1.5.min.js"></script>
+
+<script>
+  
+    var families = [ 'SilkScreenBold', 'SilkScreen'];
+
+    var INIT = (function (m, HELICOPTER, families) {
+
+      var numLoaded  = 0, 
+          numFonts   = families.length,
+          helicopter = document.getElementById('helicopter');
+
+      function loaded() { 
+        if (m.canvas && m.localstorage && m.audio && 
+            (m.audio.ogg || m.audio.mp3)) {
+          HELICOPTER.init(helicopter, '/random/helicopter/');
+        } else {    
+          el.innerHTML = 'Sorry, needs a decent browser<br /><small>' + 
+            '(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>';
+        }    
+      };
+
+      function fontLoaded(family, desc) {
+        if (++numLoaded === numFonts) {
+          loaded();
+        }
+      };
+    
+      return {'fontLoaded' : fontLoaded};
+
+    })(Modernizr, HELICOPTER, families);
+
+    WebFontConfig = { 
+      custom : { 
+        families : families, 
+        urls     : ['/random/helicopter/silkscreenbold.css', '/random/helicopter/silkscreen.css']
+      },
+      fontactive : INIT.fontLoaded
+    };
+
+</script>
+
+  <script src="/random/helicopter/webfont.js"></script>
+<br />
+After having some fun writing "pacman":http://arandomurl.com/2010/07/25/html5-pacman.html in HTML5 I decided to write another classic game, this time Helicopter.
+
+Again this a work in progress, this is still pretty rough around the edges, but its fun to play so I published it as soon as possible. Code can be found on "Github.":http://github.com/daleharvey/helicopter
+
+h3. TODO
+ * Improve the graphics
+ * Add / Improve Audio
+ * Tweak gameplay and details
+
+h2. Things to consider
+
+ * Modenizr - If you write your own checks for browser capabilities, you will get them wrong, just use "Modernizr":http://www.modernizr.com/.
+
+ * Flash Of Unstyled Text - @font-face is still somewhat problematic, Firefox will display the font using a fallback until the font has loaded, Webkit will not show anything until the font has loaded, if you write text to canvas using @font-face on Webkit before the font has loaded, Webkit will not show anything.<br /><br />I have used Googles "WebFont Loader":http://code.google.com/apis/webfonts/docs/webfont_loader.html which has an api that provides callbacks for when a font has loaded, this isnt foolproof yet though as it can still attempt to write text before it has loaded, I have also put in a shim for each font loaded <code><span style="font-family:myfont;"></span></code> which helps.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1549056
