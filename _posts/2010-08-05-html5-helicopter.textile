@@ -10,7 +10,7 @@ div(meta). 5th August 2010
   <span style="font-family:SilkScreenBold;"> </span>
   <span style="font-family:SilkScreen;"> </span>
 
-  <div id="helicopter"></div>
+  <div id="helicopter" style="margin-bottom:20px;"></div>
 
   <script src="/random/helicopter/helicopter.js"></script>
   <script src="/random/helicopter/modernizr-1.5.min.js"></script>
@@ -56,7 +56,13 @@ div(meta). 5th August 2010
 </script>
 
   <script src="/random/helicopter/webfont.js"></script>
-<br />
+
+h2. Instructions
+
+The map scrolls from the right to left, your job is to not crash into the walls and avoid the obstacles for as long as possible. Press the ENTER key or the Left Mouse Button to activate thrusters, this will make yur helicopter rise, when you release the helicopter will fall. Have fun!
+
+h2. About
+
 After having some fun writing "pacman":http://arandomurl.com/2010/07/25/html5-pacman.html in HTML5 I decided to write another classic game, this time Helicopter.
 
 Again this a work in progress, this is still pretty rough around the edges, but its fun to play so I published it as soon as possible. Code can be found on "Github.":http://github.com/daleharvey/helicopter
