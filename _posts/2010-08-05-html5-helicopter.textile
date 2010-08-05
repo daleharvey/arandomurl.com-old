@@ -72,4 +72,4 @@ h2. Things to consider
 
  * Flash Of Unstyled Text - @font-face is still somewhat problematic, Firefox will display the font using a fallback until the font has loaded, Webkit will not show anything until the font has loaded, if you write text to canvas using @font-face on Webkit before the font has loaded, Webkit will not show anything.<br /><br />I have used Googles "WebFont Loader":http://code.google.com/apis/webfonts/docs/webfont_loader.html which has an api that provides callbacks for when a font has loaded, this isnt foolproof yet though as it can still attempt to write text before it has loaded, I have also put in a shim for each font loaded <code><span style="font-family:myfont;"></span></code> which helps.
 
-"Comment on Hacker News":http://news.ycombinator.com/item?id=1549056
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1578197

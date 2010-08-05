@@ -589,7 +589,7 @@ var HELICOPTER = (function() {
 
         ctx.fillText(text, x, y);
         
-        var t  = "Click and hold enter key of Mouse Button";
+        var t  = "Click and hold enter key or Mouse Button";
         var t1 = "to go up, release to go down.";
 
         ctx.font = "12px silkscreen";
