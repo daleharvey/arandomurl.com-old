@@ -59,7 +59,7 @@ div(meta). 5th August 2010
 
 h2. Instructions
 
-The map scrolls from the right to left, your job is to not crash into the walls and avoid the obstacles for as long as possible. Press the ENTER key or the Left Mouse Button to activate thrusters, this will make yur helicopter rise, when you release the helicopter will fall. Have fun!
+The map scrolls from the right to left, your job is to not crash into the walls and avoid the obstacles for as long as possible. Hold the ENTER key or the Left Mouse Button to activate thrusters, this will make yur helicopter rise, when you release the helicopter will fall. Have fun!
 
 h2. About
 
