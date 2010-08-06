@@ -21,7 +21,7 @@ Heli.Color = {
 
 Heli.User = function (params) {
     
-    var _distance = 0;
+    var _distance = 0,
         position = null,
         _trail   = null, 
         momentum = null;
@@ -30,22 +30,22 @@ Heli.User = function (params) {
         if (_distance > bestDistance()) { 
             localStorage["bestDistance"] = _distance;
         }
-    };
+    }
 
     function bestDistance() {
         return parseInt(localStorage.bestDistance || 0);
-    };
+    }
     
     function distance() { 
         return _distance;
-    };
+    }
 
     function reset() {
         _distance = 0;
         position = 50;
         _trail = [];
         momentum = 0;
-    };
+    }
 
     function move(thrusters) { 
 
@@ -623,7 +623,7 @@ var KEY = {
     'CTRL': 17, 'ALT': 18, 'PAUSE': 19, 'CAPS_LOCK': 20, 'ESCAPE': 27, 
     'SPACEBAR': 32, 'PAGE_UP': 33, 'PAGE_DOWN': 34, 'END': 35, 'HOME': 36, 
     'ARROW_LEFT': 37, 'ARROW_UP': 38, 'ARROW_RIGHT': 39, 'ARROW_DOWN': 40, 
-    'PRINT_SCREEN': 44, 'INSERT': 45, 'DELETE': 46, 'SEMICOLON': 59, 
+    'PRINT_SCREEN': 44, 'INSERT': 45, 'DELETE': 46, 'COLON': 59, 
     'WINDOWS_LEFT': 91, 'WINDOWS_RIGHT': 92, 'SELECT': 93, 
     'NUM_PAD_ASTERISK': 106, 'NUM_PAD_PLUS_SIGN': 107, 
     'NUM_PAD_HYPHEN-MINUS': 109, 'NUM_PAD_FULL_STOP': 110, 
