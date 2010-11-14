@@ -1,0 +1,35 @@
+---
+layout: post
+title: On Joining CouchOne (and "getting" open source)
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 13th November 2010
+
+h2. Joining CouchOne
+
+On leaving my previous startup("HyperNumbers":http://hypernumbers.com/ ) I was in the common position of deciding what I want to work on in the future, I had been burned previously by the boring regime of a 9-5 however 3 years of a tiring startup had left a hole in my pocket not to mention my enthusiasm for building another startup.
+
+Out of the blue a friend mentioned that "CouchOne":http://couchone.com/ were hiring page in case I would be interested, I was. CouchOne matched my skillset very well with lots of Erlang and JavaScript, I had already built applications previously using "CouchDB":http://couchdb.apache.org/ and was a huge fan of its technical philosophy. After previously meeting some of the founders I knew they had a culture that suited me and they were happy with remote workers, perfect.
+
+So I sent in my CV with a terrible attempt at a zany cover letter, after a Skype interview with Damien (and a misplaced email) luckily "CouchOne":http://couchone.com thought I was a good fit as well and I joined immediately. Although among founders its generally agreed that employees at early stage startups get a raw deal with long work hours and little potential payoff, working anything but hard is not an option for me, and the opportunity to work with some people that I already massively respect on a technology that I really enjoyed made it a no-brainer.
+
+
+h2. "Getting" Open Source
+
+Already on a high about my new job, I flew over for "CouchCamp":http://www.couchone.com/couchcamp, a conference for CouchDB developers held on a ranch in California. From what I already knew about CouchDBs developers and users, I expected was that it would be a fun conference and that I would learn a lot.
+
+Damien kicked off the conference with a keynote speech, highlighting the growth of the CouchDB project and its progress into large scale projects such as "BBC":http://www.couchone.com/case-studies#bbc and "Canonical / Ubuntu":http://arstechnica.com/open-source/guides/2009/12/code-tutorial-make-your-application-sync-with-ubuntu-one.ars, but along with these big names Damien strung out a list of lesser known uses of CouchDB that he was equally proud of: Max Ogdens work on "PDX API":http://pdxapi.com/ + "CivicApps":http://www.civicapps.org/ideas/portland-api-papi which opens government data for the world to use, Mapping applications used to help people during the Haiti disaster and "CouchDBs use within healthcare":http://www.couchone.com/case-studies#dimagi to name a few.
+
+Very little of the conference was formal technical talks, "Selena Marie":http://www.chesnok.com/ and Josh Berkus had very interesting talks comparing Postgres to "CouchDB":http://couchdb.apache.org/, but most of the conference was formed by unconference sessions where everyone discussed a variety of of topics from evently to R Trees and beyond.
+
+For the grand finale, "Ted Leung":http://www.sauria.com/blog/ ended "CouchCamp":http://www.couchone.com/couchcamp with an incredible talk about the values of open source, Reading whole excerpts from "Noah Slaters email(must read)":http://groups.google.com/group/tumbolia/browse_thread/thread/4a5e8ed2cf064b7b  which really hit home the value of a community within open source projects.
+
+I have always been enjoyed being part of the open source community, I did Google Summer of Code while I was at university and worked on Inkscape, having started a few minor open source projects and contributed to others, along with my constant presence on IRC / Freenode meant I thought I had a fairly good grasp on how open source projects are built and how they work. 
+
+However it still took me seeing it happen in real life before I realised that open source is much more than a license, and the people involved in open source communities share much more than a code repository, they share a vision for the project, a willingness to give a lot and ask for nothing in return and a belief that sharing their knowledge will benefit everyone.
+
+The "CouchDB":http://couchdb.apache.org/ community is a massively varying place, from low level systems hackers to people working with big data, from html5 web gurus to open data proponents, There is some amazing and gratifying work being done by a lot of people and I couldn't feel more privileged and excited to be a part of it.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=1901653
