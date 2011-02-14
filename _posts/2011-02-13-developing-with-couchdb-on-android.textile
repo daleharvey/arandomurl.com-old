@@ -18,7 +18,7 @@ In this post I will take a very basic CouchApp and turn it into a "native Androi
 h3. Ugh, Install Dependencies
 
 # "Install the Android SDK":http://developer.android.com/sdk/installing.html
-# "Install CouchApp":http://developer.android.com/sdk/installing.html
+# "Install CouchApp":http://couchapp.org/page/installing
 # Download libcouch-android, "tgz":https://github.com/couchone/libcouch-android/tarball/master or "git":https://github.com/couchone/libcouch-android
 # "Install CouchDB on your device / emulator":https://market.android.com/details?id=com.couchone.couchdb
 
