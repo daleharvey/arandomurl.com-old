@@ -5,8 +5,8 @@
 /*****************************************************************************/
 
 @font-face {
-	font-family : 'Museo Slab';
-	src         : local('Museo Slab'),
+    font-family : 'Museo Slab';
+    src         : local('Museo Slab'),
     url('/random/Museo_Slab_500.otf') format('opentype');
 }
 
@@ -19,7 +19,7 @@ html, body {
   height: 100%;
 }
 
-body { 
+body {
     overflow-y:scroll;
 }
 
@@ -42,13 +42,13 @@ h1, h2, h3, h3, h5 {
     margin-bottom: 0.5em;
 }
 
-h2 { 
+h2 {
     line-height:100%;
 }
 
 p {
     margin: 0 0 1.5em 0;
-    color:#222;
+    Color:#222;
 }
 
 ol, ul {
@@ -113,7 +113,12 @@ ul.posts {
 /* Site
 /*
 /*****************************************************************************/
-
+.img { text-align:center; }
+.imgshadow { 
+-moz-box-shadow: 0px 0px 10px #888;
+-webkit-box-shadow: 0px 0px 10px #888;
+box-shadow: 0px 0px 10px #880;
+}
 
 header { 
     display:block;
@@ -214,6 +219,8 @@ header a:hover {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 0 .4em;
+    margin-bottom: 1.5em;
+    overflow-x:auto;
   }
 
   #post ul,
