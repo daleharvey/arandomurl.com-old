@@ -1,0 +1,126 @@
+---
+layout: post
+title: Developing with CouchDB on Android
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 13th Feb 2011
+
+So you know why "CouchDB on mobile":http://www.couchone.com/page/why-mobile is an awesome fit, but getting CouchDB working on the device is only the first step, for it to be useful CouchDB needs to provide an easy and convenient way to be used on mobile devices. This is the first in a series of introductions to CouchDB on Android.
+
+<a href="https://market.android.com/details?id=com.arandomurl.couchnotes"><img src="https://ssl.gstatic.com/android/market/com.arandomurl.couchnotes/ss-0-320-480-160-0-17daaf2706f62e4bba05e73243b227e430d20bae" class="imgshadow" style="float:right;width:200px; margin-left:10px;" /></a>
+
+In this post I will take a very basic CouchApp and turn it into a "native Android App":https://market.android.com/details?id=com.arandomurl.couchnotes. If you arent familiar with CouchApps, please check out "couchapp.org":http://couchapp.org.
+
+*Warning* CouchDB on Android is currently in beta, the API's may change in future and you should always backup any data seperately.
+
+h3. Ugh, Install Dependancies
+
+# "Install the Android SDK":http://developer.android.com/sdk/installing.html
+# "Install CouchApp":http://developer.android.com/sdk/installing.html
+# Download libcouch-android, "tgz":https://github.com/couchone/libcouch-android/tarball/master or "git":https://github.com/couchone/libcouch-android
+# "Install CouchDB on your device / emulator":https://market.android.com/details?id=com.couchone.couchdb
+
+h3. Lets Get Started
+
+First you should open a log viewer this allows you to view logs produced by CouchDB and your browser.
+
+<pre><code>adb logcat</code></pre>
+
+If you havent already started CouchDB on the device, do so now. once you see a "CouchDB Running" notification then run the following command in your shell:
+
+<pre><code>adb forward tcp:5985 tcp:5984</pre></code>
+
+You can now access CouchDB on your device via your computer @ "127.0.0.1:5985/_utils":http://127.0.0.1:5985/_utils
+
+Now you need to open the <code>libcouch-android</code> project in eclipse (<code>File > New Project > Android Project > Open from existing directory</code> and browse to the directory you downloaded <code>libcouch-android</code>) 
+
+Then create a new Android Project, <code>File > New Project > Android Project</code>
+
+<div class="img"><img src="/random/img/create.png" /></div>
+
+Add <code>libcouch-android</code> as a library to your Application, you can do this by right clicking your new application in the project manager, picking <code>Properties > Android</code> and choosing <code>libcouch-android</code>
+
+<div class="img"><img src="/random/img/libcouch.png" /></div>
+
+Copy the source of "ExampleCouchApp.java":https://github.com/couchone/libcouch-android/blob/master/src/com/couchone/libcouch/ExampleCouchApp.java into your main activity <code>MyApp/src/com/myname/myapp/MyApp.java</code> and set the <code>bootStrapDatabases</code> + <code>appToLaunch</code> variables as instructed, "here is a working example":https://github.com/daleharvey/android-couchnotes/blob/master/src/com/arandomurl/couchnotes/CouchNotes.java 
+
+Drag and drop "this json file":https://github.com/daleharvey/android-couchnotes/raw/master/assets/couchnotes.json to the <code>assets</code> directory, this json can be created for any couchapp by using the command 
+
+<pre><code>couchapp push --export > filename.json</pre></code>
+
+Your App should be ready to go! Click on the green <code>Run</code> button in eclipse and your application should be loaded on your phone, if you run in to any problems then check the output of <code>adb logcat</code>, below is an example of what the project should look like:
+
+<img src="/random/img/screen.png" />
+
+
+h2. FAQ - Developing on android
+
+h3. How do I access CouchDB on my computer
+
+<pre><code>adb forward tcp:5985 tcp:5984</code></pre>
+
+Will let you access CouchDB via "http://127.0.0.1:8985/_utils":http://127.0.0.1:8985/_utils
+
+h3. How do I view the CouchDB / Console logs
+
+<pre><code>adb logcat</code></pre>
+
+h3. Something broke?
+
+That isnt a question, but please email me at <code>dale@couchbase.com</code> with as much information as possible. The output from <code>adb logcat</code> is extremely useful.
+
+h3. How do I build CouchDB for Android myself.
+
+You dont need to build CouchDB yourself to program against it, but if you really want to then there are instructions on "the CouchDB wiki":http://wiki.apache.org/couchdb/Installing_on_Android
+
+Much thanks to Matt Adams.
+
+h3. How do I use CouchApp to push to my phone?
+
+The same way you push to any other CouchDB, you need to have set up forwaring first, my .couchapprc file looks like:
+<pre><code>{
+  "env" : {
+    "default" : {
+      "db" : "http://myname:mypass@127.0.0.1:5984/couchnotes"
+    },
+    "android" : {
+      "db" : "http://org_android_couchnotes:pass@127.0.0.1:5985/couchnotes-org_android_couchnotes"
+    }
+  }
+}</code></pre>
+
+h3. How do I find out the credentials to access my database?
+
+Each android package gets its own username and password to access its databases, these credentials are given to your program when you initialise a database. 
+
+The username for your package is the package id with periods replaces with underscores, so org.couchdb.couchapplauncher is org_couchdb_couchapplauncher.
+
+To find your password you can run
+
+<pre><code>adb shell cat /mnt/sdcard/couch/org_couchdb_couchapplauncher.passwd</code></pre>
+
+and to find the admin details, click on the menu button while futon is open and select <code>Admin Password</code>
+
+h3.  Is my data really secure?
+
+No, although the SDK provides seperation between applications, currently Android CouchDB stores all data on the SD Card of your phone due to the size of the data. Other applications can access your data directly though the SD Card.
+
+h3. I want a native app, not a CouchApp
+
+The process for building a native application that uses CouchDB is exactly the same, just include "libcouch-android":https://github.com/couchone/libcouch-android as a library to your project, "ICouchService.aidl":https://github.com/couchone/libcouch-android/blob/master/src/com/couchone/libcouch/ICouchService.aidl are the functions you use to control CouchDB
+
+h3. How big is CouchDB / CouchDB is too big for my app
+
+Currently CouchDB is around 17MB uncompressed (about a 10MB download), There is a lot of work being done to reduce the size for both downloading and runtime memory footprint.
+
+h3. How do I use my own CouchApp
+
+<pre><code>couchapp push --export > filename.json</code></pre>
+
+Will produce a json file that can be loaded into Couch, the <code>ExampleCouchApp.java</code> will look for a json file in the assets folder for every database that is bootstrapped.
+
+h3. How to I access Geolocation etc from my CouchApp?
+
+"PhoneGap":http://www.phonegap.com/ is a library that allows you to access native API's via Javascript and is an excellent compliment to CouchDB on Android.
