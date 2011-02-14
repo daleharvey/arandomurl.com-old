@@ -45,9 +45,3 @@ h2. More Resources
  * "Design for developers: Making your frontend Suck Less":http://blip.tv/file/3685673/
  * "Designing for the web":http://designingfortheweb.co.uk/
  * "Design for the Coder's Mind":http://www.kadavy.net/blog/posts/design-for-the-coders-mind-reverse-engineering-visual-design/
-
-<script type="text/javascript">
-	var flattr_url = 'http://arandomurl.com/2010/07/07/design-tips-for-programmers.html';
-	var flattr_btn='compact';
-</script>
-<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
