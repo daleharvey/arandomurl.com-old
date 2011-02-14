@@ -11,7 +11,7 @@ So you know why "CouchDB on mobile":http://www.couchone.com/page/why-mobile is a
 
 <a href="https://market.android.com/details?id=com.arandomurl.couchnotes"><img src="https://ssl.gstatic.com/android/market/com.arandomurl.couchnotes/ss-0-320-480-160-0-17daaf2706f62e4bba05e73243b227e430d20bae" class="imgshadow" style="float:right;width:200px; margin-left:10px;" /></a>
 
-In this post I will take a very basic CouchApp and turn it into a "native Android App":https://market.android.com/details?id=com.arandomurl.couchnotes. If you arent familiar with CouchApps, please check out "couchapp.org":http://couchapp.org.
+In this post I will take a very basic CouchApp and turn it into a "native Android App":https://market.android.com/details?id=com.arandomurl.couchnotes. If you arent familiar with CouchApps, please check out "couchapp.org":http://couchapp.org. The github sources are up for "the couchapp":https://github.com/daleharvey/couchnotes and related "android project":https://github.com/daleharvey/android-couchnotes
 
 *Warning* CouchDB on Android is currently in beta, the API's may change in future and you should always backup any data seperately.
 
@@ -40,11 +40,17 @@ Then create a new Android Project, <code>File > New Project > Android Project</c
 
 <div class="img"><img src="/random/img/create.png" /></div>
 
+Open <code>AndroidManifest.xml</code> and enter:
+
+<pre><code><uses-permission android:name="android.permission.INTERNET"></uses-permission></pre></code>
+
+to make sure your app can communicate with Couch's REST API ("example here":https://github.com/daleharvey/android-couchnotes/blob/master/AndroidManifest.xml)
+
 Add <code>libcouch-android</code> as a library to your Application, you can do this by right clicking your new application in the project manager, picking <code>Properties > Android</code> and choosing <code>libcouch-android</code>
 
 <div class="img"><img src="/random/img/libcouch.png" /></div>
 
-Copy the source of "ExampleCouchApp.java":https://github.com/couchone/libcouch-android/blob/master/src/com/couchone/libcouch/ExampleCouchApp.java into your main activity <code>MyApp/src/com/myname/myapp/MyApp.java</code> and set the <code>bootStrapDatabases</code> + <code>appToLaunch</code> variables as instructed, "here is a working example":https://github.com/daleharvey/android-couchnotes/blob/master/src/com/arandomurl/couchnotes/CouchNotes.java 
+Copy the source of "ExampleCouchApp.java":https://github.com/couchone/libcouch-android/raw/master/src/com/couchone/libcouch/ExampleCouchApp.java into your main activity <code>MyApp/src/com/myname/myapp/MyApp.java</code>(remember to preserve your package + class name) and set the <code>bootStrapDatabases</code> + <code>appToLaunch</code> variables as instructed, "here is a working example":https://github.com/daleharvey/android-couchnotes/blob/master/src/com/arandomurl/couchnotes/CouchNotes.java 
 
 Drag and drop "this json file":https://github.com/daleharvey/android-couchnotes/raw/master/assets/couchnotes.json to the <code>assets</code> directory, this json can be created for any couchapp by using the command 
 
@@ -53,6 +59,8 @@ Drag and drop "this json file":https://github.com/daleharvey/android-couchnotes/
 Your App should be ready to go! Click on the green <code>Run</code> button in eclipse and your application should be loaded on your phone, if you run in to any problems then check the output of <code>$ adb logcat</code>, below is an example of what the project should look like:
 
 <img src="/random/img/screen.png" />
+
+Well done on your first Android + CouchDB App :) I have started compiling a list of frequently asked questions below to help you as you start making your own Android CouchApps, if you have problems or there is anything I havent covered, please get in touch with me "dale@couchbase.com":mailto://dale@couchbase.com or "@daleharvey":http://twitter.com/daleharvey I would also love to hear from you if you are using CouchDB to build mobile apps, Have fun and Relax.
 
 h2. FAQ - Developing on android
 
@@ -70,7 +78,7 @@ h3. Something broke?
 
 That isnt a question, but please email me at <code>dale@couchbase.com</code> with as much information as possible. The output from <code>$ adb logcat</code> is extremely useful.
 
-h3. How do I build CouchDB for Android myself.
+h3. How do I build CouchDB for Android myself?
 
 You dont need to build CouchDB yourself to program against it, but if you really want to then there are instructions on "the CouchDB wiki":http://wiki.apache.org/couchdb/Installing_on_Android
 
@@ -92,15 +100,15 @@ The same way you push to any other CouchDB, you need to have set up forwaring fi
 
 h3. I tried to create a database with name X and it doesnt exist?
 
-You cant directly create databases as they may conflict with other applications, your databases will be created with your packagename prepended (with periods replaced by underscores) so the database created for CouchNotes is names <code>com_arandomurl_couchnotes-couchnotes</code>
+You cant directly create databases as they may conflict with other applications, your databases will be created with your packagename appended (with periods replaced by underscores) so the database created for CouchNotes is names <code>couchnotes-com_arandomurl_couchnotes</code>
 
-h3. How do I find out the credentials to CouchDB
+h3. How do I find out the credentials to CouchDB databases?
 
-When you create a database (<code>initDatabase</code>) you provide a password, a user is created with the username being the package name of your app with periods replaced with underscores (for example <code>com_arandomurl_couchnotes) and they are set as admin on any databases you create
+When you create a database you provide a password, a user is created with the username being the package name of your app with periods replaced with underscores (for example <code>com_arandomurl_couchnotes</code>) and they are set as admin on any databases you create.
 
-<code>CouchUtils.java</code> provides a <code>generatePassword(key)</code> function to help create the password, you can find the generated password by running:
+<code>CouchUtils.java</code> provides a <code>readOrGeneratePass</code> function to help generate and store a password, you can find the generated password by running:
 
-<pre><code>adb shell cat /mnt/sdcard/couch/key.passwd</code></pre>
+<pre><code>adb shell cat /data/data/com.myname.myapp/files/com_myname_myapp.passwd</code></pre>
 
 Click on the menu button while futon is open and select <code>Admin Password</code>
 
@@ -112,7 +120,7 @@ h3. I want a native app, not a CouchApp
 
 The process for building a native application that uses CouchDB is exactly the same, just include "libcouch-android":https://github.com/couchone/libcouch-android as a library to your project, "ICouchService.aidl":https://github.com/couchone/libcouch-android/blob/master/src/com/couchone/libcouch/ICouchService.aidl are the functions you use to control CouchDB
 
-h3. How big is CouchDB / CouchDB is too big for my app
+h3. How big is CouchDB? / CouchDB is too big for my app
 
 Currently CouchDB is around 17MB uncompressed (about a 10MB download), There is a lot of work being done to reduce the size for both downloading and runtime memory footprint.
 
@@ -122,10 +130,18 @@ h3. How do I use my own CouchApp
 
 Will produce a json file that can be loaded into Couch, the <code>ExampleCouchApp.java</code> will look for a json file in the assets folder for every database that is bootstrapped.
 
-h3. How to I access Geolocation etc from my CouchApp?
+h3. How do I access Geolocation etc from my CouchApp?
 
 "PhoneGap":http://www.phonegap.com/ is a library that allows you to access native API's via Javascript and is an excellent compliment to CouchDB on Android.
 
 h3. How do I publish my App?
 
 Just follow the standard "Android publishing procedure":http://developer.android.com/guide/publishing/publishing.html
+
+h3. CouchDB Reloads when I change orientation
+
+Android by default will destroy your activity when your phone changes orientation, you can use
+
+<pre><code>android:configChanges="keyboardHidden|orientation"</code></pre>
+
+to avoid that, "here is a working example.":https://github.com/daleharvey/android-couchnotes/blob/master/AndroidManifest.xml#L14
