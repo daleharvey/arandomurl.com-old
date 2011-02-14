@@ -15,7 +15,7 @@ In this post I will take a very basic CouchApp and turn it into a "native Androi
 
 *Warning* CouchDB on Android is currently in beta, the API's may change in future and you should always backup any data seperately.
 
-h3. Ugh, Install Dependancies
+h3. Ugh, Install Dependencies
 
 # "Install the Android SDK":http://developer.android.com/sdk/installing.html
 # "Install CouchApp":http://developer.android.com/sdk/installing.html
@@ -26,11 +26,11 @@ h3. Lets Get Started
 
 First you should open a log viewer this allows you to view logs produced by CouchDB and your browser.
 
-<pre><code>adb logcat</code></pre>
+<pre><code>$ adb logcat</code></pre>
 
 If you havent already started CouchDB on the device, do so now. once you see a "CouchDB Running" notification then run the following command in your shell:
 
-<pre><code>adb forward tcp:5985 tcp:5984</pre></code>
+<pre><code>$ adb forward tcp:5985 tcp:5984</pre></code>
 
 You can now access CouchDB on your device via your computer @ "127.0.0.1:5985/_utils":http://127.0.0.1:5985/_utils
 
@@ -48,28 +48,27 @@ Copy the source of "ExampleCouchApp.java":https://github.com/couchone/libcouch-a
 
 Drag and drop "this json file":https://github.com/daleharvey/android-couchnotes/raw/master/assets/couchnotes.json to the <code>assets</code> directory, this json can be created for any couchapp by using the command 
 
-<pre><code>couchapp push --export > filename.json</pre></code>
+<pre><code>$ couchapp push --export > filename.json</pre></code>
 
-Your App should be ready to go! Click on the green <code>Run</code> button in eclipse and your application should be loaded on your phone, if you run in to any problems then check the output of <code>adb logcat</code>, below is an example of what the project should look like:
+Your App should be ready to go! Click on the green <code>Run</code> button in eclipse and your application should be loaded on your phone, if you run in to any problems then check the output of <code>$ adb logcat</code>, below is an example of what the project should look like:
 
 <img src="/random/img/screen.png" />
-
 
 h2. FAQ - Developing on android
 
 h3. How do I access CouchDB on my computer
 
-<pre><code>adb forward tcp:5985 tcp:5984</code></pre>
+<pre><code>$ adb forward tcp:5985 tcp:5984</code></pre>
 
-Will let you access CouchDB via "http://127.0.0.1:8985/_utils":http://127.0.0.1:8985/_utils
+Will let you access CouchDB via "http://127.0.0.1:5985/_utils":http://127.0.0.1:5985/_utils
 
 h3. How do I view the CouchDB / Console logs
 
-<pre><code>adb logcat</code></pre>
+<pre><code>$ adb logcat</code></pre>
 
 h3. Something broke?
 
-That isnt a question, but please email me at <code>dale@couchbase.com</code> with as much information as possible. The output from <code>adb logcat</code> is extremely useful.
+That isnt a question, but please email me at <code>dale@couchbase.com</code> with as much information as possible. The output from <code>$ adb logcat</code> is extremely useful.
 
 h3. How do I build CouchDB for Android myself.
 
@@ -86,22 +85,24 @@ The same way you push to any other CouchDB, you need to have set up forwaring fi
       "db" : "http://myname:mypass@127.0.0.1:5984/couchnotes"
     },
     "android" : {
-      "db" : "http://org_android_couchnotes:pass@127.0.0.1:5985/couchnotes-org_android_couchnotes"
+      "db" : "http://com_arandomurl_couchnotes:pass@127.0.0.1:5985/couchnotes-org_android_couchnotes"
     }
   }
 }</code></pre>
 
-h3. How do I find out the credentials to access my database?
+h3. I tried to create a database with name X and it doesnt exist?
 
-Each android package gets its own username and password to access its databases, these credentials are given to your program when you initialise a database. 
+You cant directly create databases as they may conflict with other applications, your databases will be created with your packagename prepended (with periods replaced by underscores) so the database created for CouchNotes is names <code>com_arandomurl_couchnotes-couchnotes</code>
 
-The username for your package is the package id with periods replaces with underscores, so org.couchdb.couchapplauncher is org_couchdb_couchapplauncher.
+h3. How do I find out the credentials to CouchDB
 
-To find your password you can run
+When you create a database (<code>initDatabase</code>) you provide a password, a user is created with the username being the package name of your app with periods replaced with underscores (for example <code>com_arandomurl_couchnotes) and they are set as admin on any databases you create
 
-<pre><code>adb shell cat /mnt/sdcard/couch/org_couchdb_couchapplauncher.passwd</code></pre>
+<code>CouchUtils.java</code> provides a <code>generatePassword(key)</code> function to help create the password, you can find the generated password by running:
 
-and to find the admin details, click on the menu button while futon is open and select <code>Admin Password</code>
+<pre><code>adb shell cat /mnt/sdcard/couch/key.passwd</code></pre>
+
+Click on the menu button while futon is open and select <code>Admin Password</code>
 
 h3.  Is my data really secure?
 
@@ -117,10 +118,14 @@ Currently CouchDB is around 17MB uncompressed (about a 10MB download), There is 
 
 h3. How do I use my own CouchApp
 
-<pre><code>couchapp push --export > filename.json</code></pre>
+<pre><code>$ couchapp push --export > filename.json</code></pre>
 
 Will produce a json file that can be loaded into Couch, the <code>ExampleCouchApp.java</code> will look for a json file in the assets folder for every database that is bootstrapped.
 
 h3. How to I access Geolocation etc from my CouchApp?
 
 "PhoneGap":http://www.phonegap.com/ is a library that allows you to access native API's via Javascript and is an excellent compliment to CouchDB on Android.
+
+h3. How do I publish my App?
+
+Just follow the standard "Android publishing procedure":http://developer.android.com/guide/publishing/publishing.html
