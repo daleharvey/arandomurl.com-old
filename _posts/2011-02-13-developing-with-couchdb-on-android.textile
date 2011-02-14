@@ -62,6 +62,8 @@ Your App should be ready to go! Click on the green <code>Run</code> button in ec
 
 Well done on your first Android + CouchDB App :) I have started compiling a list of frequently asked questions below to help you as you start making your own Android CouchApps, if you have problems or there is anything I havent covered, please get in touch with me "dale@couchbase.com":mailto://dale@couchbase.com or "@daleharvey":http://twitter.com/daleharvey I would also love to hear from you if you are using CouchDB to build mobile apps, Have fun and Relax.
 
+"Comment on Hacker News":http://news.ycombinator.com/item?id=2218825
+
 h2. FAQ - Developing on android
 
 h3. How do I access CouchDB on my computer
