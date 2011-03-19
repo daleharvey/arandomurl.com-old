@@ -170,3 +170,5 @@ Taking a read though the "Safari CSS Reference":http://developer.apple.com/libra
 h3. Phew, finished
 
 If you actually got to the end of that, well done, it got a bit longer than I expected. I will be updating this post as I come across new tools and techniques so please comment on hacker news or get in touch with me via email / twitter if you see something cool / useful.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=2344276
