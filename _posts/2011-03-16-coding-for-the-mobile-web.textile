@@ -5,7 +5,7 @@ title: Coding for the Mobile Web
 
 h1(title). {{ page.title }}
 
-div(meta). 13th Feb 2011
+div(meta). 19th March 2011
 
 Following the beta releases of CouchDB on "iOS":https://github.com/couchbaselabs/iOS-Couchbase and "Android":https://market.android.com/details?id=com.couchone.couchdb, I decided to finally jump on the bandwagon and take my hand at building some mobile apps, when it came to native vs HTML there really wasnt much of a decision, Matt Ubi sums up my opinion perfectly:
 
