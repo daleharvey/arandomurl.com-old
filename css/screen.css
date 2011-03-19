@@ -56,7 +56,7 @@ ol, ul {
     color:#222;
 }
 
-li { 
+li {
     margin-left:1em;
 }
 
@@ -74,7 +74,7 @@ a:visited {
   color: #6ACEFC;
 }
 
-a img { 
+a img {
     border:0px;
 }
 
@@ -83,7 +83,7 @@ table {
   font: 100%;
 }
 
-ul {  
+ul {
     padding-left:1em;
 }
 
@@ -114,20 +114,20 @@ ul.posts {
 /*
 /*****************************************************************************/
 .img { text-align:center; }
-.imgshadow { 
--moz-box-shadow: 0px 0px 10px #888;
--webkit-box-shadow: 0px 0px 10px #888;
-box-shadow: 0px 0px 10px #880;
+.imgshadow {
+-moz-box-shadow: 2px 2px 5px #888;
+-webkit-box-shadow: 2px 2px 5px #888;
+box-shadow: 2px 2px 5px #888;
 }
 
-header { 
+header {
     display:block;
     text-align:right;
     background:#2F3333;
     color:#EEE;
     padding:5px;
     padding-bottom:6px;
-    
+
 }
 
 header div {
@@ -135,7 +135,7 @@ header div {
     margin:0px auto;
 }
 
-header a { 
+header a {
     color:#EEE !important;
     font-family: 'Museo Slab', Arial,Tahoma,sans-serif;
 
@@ -146,7 +146,7 @@ header a {
     text-shadow:1px 1px #000, 2px 2px #000, 3px 3px #000;
 }
 
-header a:hover { 
+header a:hover {
     font-style:italic;
     color:#FFF !important;
     text-shadow:1px 1px #A9D114, 2px 2px #A9D114, 3px 3px #A9D114;
@@ -203,6 +203,37 @@ header a:hover {
       margin-right: 3em;
     }
 
+
+blockquote {
+    font-family: Georgia,'Times New Roman',Times,Serif;
+    font-style:italic;
+    font-size:20px;
+    position:relative;
+    padding: 0 45px 0 45px;
+}
+
+blockquote p {
+    color:#999;
+}
+
+blockquote:before, blockquote:after {
+    height:20px;
+    position:absolute;
+    color: #69c;
+    font-size: 400%;
+    width: 50px;
+}
+blockquote:before {
+    top:-30px;
+    left:0px;
+    content: open-quote;
+}
+
+blockquote:after {
+    content: close-quote;
+    bottom:50px;
+    right:0px;
+}
 /*****************************************************************************/
 /*
 /* Posts

@@ -1,0 +1,172 @@
+---
+layout: post
+title: Coding for the Mobile Web
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 13th Feb 2011
+
+Following the beta releases of CouchDB on "iOS":https://github.com/couchbaselabs/iOS-Couchbase and "Android":https://market.android.com/details?id=com.couchone.couchdb, I decided to finally jump on the bandwagon and take my hand at building some mobile apps, when it came to native vs HTML there really wasnt much of a decision, Matt Ubi sums up my opinion perfectly:
+
+bq. For the record: Historians will classify native mobile apps as a short resurgence of shareware that was swiftly again replaced by the web - "@cramforce":http://twitter.com/cramforce
+
+<a href="https://github.com/daleharvey/couchtasks"><img src="/random/couchtasks.png" class="imgshadow" style="float:right;width:200px; margin-left:20px;" /></a>
+
+So what was the result? after some fustrating hours I came up with "CouchTasks":http://daleharvey.couchone.com/couchtasks/_design/couchtasks/index.html, it is a very basic task manager based on CouchDB however as a work in progress I am quite happy with the result. It is quite obvious that mobile web apps arent going to quite reach the polish of native apps for the foreseeable future, however if you some extra effort you can build something that comes very close to a native experience, is cross platform and takes a fraction of the time. Below I will document some of the tools and techniques I found while building CouchTasks, I found information about mobile web development in general quite sparse so hopefully this can help someone. The code for CouchTasks is all "on github":https://github.com/daleharvey/couchtasks
+
+h3. Stating the Obvious
+
+You need to think carefully about your mobile design, mobile devices are much smaller and more fiddly, you need to put plenty of padding on your clickable areas, you should reduce what is on screen and more importantly reduce the the amount of things people interact with in you ui. Mari Sheibley has put up a really useful site that shows some common "mobile pattens in action":http://mobile-patterns.com/
+
+Another thing to note is that you really need to test your app on a device regularly, while testing inside a small chrome window is certainly helpful, a lot of the issues will only be obvious when testing an a device.
+
+h3. Development Tools
+
+If you havent already (and use android), install the "FoxToPhone":http://www.foxtophone.com/ or "ChromeToPhone":https://chrome.google.com/extensions/detail/oadboiipflhobonjjffjbfekfjcgkhco extension. They just open a url in your browser on the phone to save typing urls.
+
+When I started building CouchTasks it felt like web development before firebug came on the scene, <code>console.log()</code> are available via the android and iphone log viewers but that still leaves a lot of work. Recently however I found "Weinre":http://pmuellr.github.com/weinre/ which lets you embed a script into your page that allows you to use the web inspector on your computer to debug pages on your mobile device, there is also "JSConsole":http://jsconsole.com/ which uses the same technique to provide a javascript console. These are currently quite fiddly to set up but vastly improve the ability to debug and introspect your web pages.
+
+h3. Position fixed is broken
+
+Due to how mobile browsers scroll the viewpane instead of the content, <code>position:fixed</code> largely doesnt work as expected, the biggest implication is that you can not have a a fixed footer at the bottom of the page, there are various workarounds:
+
+# hide your footer when you scroll, position it when you are finished.
+# put everything <code>overflow:hidden</code> and recreate scroll manually
+# Redo layout to avoid a fixed footer
+
+Showing and hiding elements on scroll, especially the global constant navigation is clearly undesirable. Given that scrolling is widely used paradigm and very performance sensitive I feel like browser vendors really need to come up with a common solution to this, especially considering that mobile screens are perfectly suited for fixed footer navigation.
+
+If you want to try manually emulate scroll inside a div, "iscroll4":http://cubiq.org/iscroll-4 has a cross platform script in which you can just specity an element to scroll, I found it wasnt fast / reliable enough though particularly on android.
+
+h3. Page Slide Animations
+
+Sliding between pages is common on mobile and it makes sense so I spend a little while looking into it. There are a lot of loosely tied together articles but I couldnt find a canonical resource so pulling this together took a little time. I experiment by first building using <code>jQuery.animate</code> which is slow enough on desktop browsers let alone mobile devices, I then used CSS transitions where were very easy to swap out over jquery animations but again slightly laggy.
+
+Using CSS transforms combined with CSS transitions look to be the most performant animation as transforms can be hardware accelerated, they are slightly confusing as they dont actually move the dom element just its position when drawn but again its fairly easy to swap between the various techniques.
+
+My technique for animation is to create a wrapper element inside which I put absolutely positioned children
+
+<pre><code><div id="wrapper"></div></code></pre>
+
+on the parent wrapper you specify a transition that runs whenever a property has changed.
+
+<pre><code>#wrapper {
+  position:relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+}</code></pre>
+
+I think when adding a new page, create a new div, place it to the left/right of the currently shown pane, then change the transform on the parent element which kicks off the transition.
+
+<pre><code>var $wrapper = $("#wrapper"),
+    size = {width:150, height:300},
+    $pane = null,
+    currentOffset = 0;
+
+function add(e) {
+  // Remove out of view panes from the dom once the transition has finished
+  if ($pane) {
+    (function(pane) {
+      var events = "webkitTransitionEnd transitionend";
+      $wrapper.one(events, function () {
+        pane.remove();
+      });
+    })($pane);
+  }
+
+  // Calculate position for new panes
+  currentOffset += size.width;
+
+  // Create a new pane and place it next to the current pane
+  $pane = $("<div class='pane'>yay a new panel</div>")
+    .css(size)
+    .css({left: currentOffset})
+    .appendTo($wrapper);
+
+  // change the transform on the wrapper element, initialising the animation.
+  transformX($wrapper, -currentOffset);
+};
+
+function transformX(dom, x) {
+  dom.css("-moz-transform", "translate(" + x + "px, 0)")
+    .css("-webkit-transform", "translate(" + x + "px, 0)");
+};
+
+$("#add").bind("click", add);</code></pre>
+
+Here is a "working demo":http://pastebin.me/7a3b20870802cd22561417ec4a0125de (probably chrome / firefox 4 only)
+
+h3. Delay on Click Events
+
+Being responsive is important on mobile web sites, native apps have raised the bar by being smooth and responsive, web apps will be fustrating if they dont live up to the high standards.
+
+On mobiles there is a delay when clicking links and recieving <code>click</code> <code>mouseup</code> and <code>mousedown</code> events. This is in order to handle tap events. I made a quick test "here":http://pastebin.me/7a3b20870802cd22561417ec4a006e2f
+
+<pre>touchstart   1300546090349
+touchend     1300546090448    +99ms
+mousedown    1300546090761    +313ms
+mouseup      1300546090786    +25ms
+click        1300546090794    +8ms</pre>
+
+So in this case the <code>click</code> event is recieved almost half a second (445ms) after the <code>touchstart</code> event which is a very noticable delay. There are various solutions: you can quite simply swap out <code>mouseup</code> for <code>touchend</code>, however you need to be aware of the considerations, the user may be scrolling in which following a link would be pretty annoying.
+
+As a quick fix I added this to links where I didnt expect the user to be scrolling, I dont think it would be hard to create a generic <code>pressed</code> event that removes the delay without introducing undesire behavior.
+
+<pre>
+<code>$(document).bind("touchend", function(e) {
+  if (e.target.nodeName === 'A' && e.target.getAttribute('href')) {
+    e.preventDefault();
+    document.location.href = e.target.getAttribute('href');
+  }
+});</code>
+</pre>
+
+
+h3. Icon Resolution
+
+Mobile screens are small but often have a very high resolution, I have found icons that looked reasonable on a desktop look terribly unsharp on mobile devices. I plan on looking into SVG support in the near future as the correct solution to this problem, as a quick fix however, serving larger icons and resampling them has worked well for me.
+
+<pre><code>.iconbutton {
+    width:16px;
+    height:16px;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-origin:content-box;
+    background-size:100%;
+    background-image:url(myicon32x32.png);
+}</pre></code>
+
+h3. Forms
+
+Laying out forms is alway problematic, however mobile webkit thankfully supports the placeholder attribute so you can replace
+
+<pre><code><label>First Name</label>
+<input type="text" /></pre></code>
+
+with
+
+<pre><code><input type="text" placeholder="First Name" /></pre></code>
+
+Which places the label inside the input and hides it on focus, saving some valuable space. Mark Pilgrim has documented a lot of new features to HTML5 forms in "diveintohtml5":http://diveintohtml5.org/forms.html (sadly it looks like required is not supported)
+
+h3. General CSS / Styling
+
+Forms, links and elements with touch/click events  are often given additional styling on mobile devices.
+
+<pre><code>-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-appearance: none;
+-webkit-focus-ring-color:  rgba(0, 0, 0, 0);
+resize: none;
+outline: none;</code></pre>
+
+A various combination of these properties will usually get rid of them. its also worth noting that mobile webkit (along with firefox etc) support switching box models, very useful for giving margin / padding to elements that are otherwide full width.
+
+<pre><code>-moz-box-sizing: border-box;
+box-sizing: border-box;</code></pre>
+
+Taking a read though the "Safari CSS Reference":http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html is worth doing.
+
+h3. Phew, finished
+
+If you actually got to the end of that, well done, it got a bit longer than I expected. I will be updating this post as I come across new tools and techniques so please comment on hacker news or get in touch with me via email / twitter if you see something cool / useful.
