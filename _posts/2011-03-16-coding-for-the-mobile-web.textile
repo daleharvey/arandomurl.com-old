@@ -57,7 +57,7 @@ on the parent wrapper you specify a transition that runs whenever a property has
   -moz-transition: all 0.5s ease-in-out;
 }</code></pre>
 
-I think when adding a new page, create a new div, place it to the left/right of the currently shown pane, then change the transform on the parent element which kicks off the transition.
+when adding a new page, create a new div, place it to the left/right of the currently shown pane, then change the transform on the parent element which kicks off the transition.
 
 <pre><code>var $wrapper = $("#wrapper"),
     size = {width:150, height:300},
