@@ -263,7 +263,6 @@ blockquote:after {
     border: 1px solid #ddd;
     background-color: #eef;
     font-size: 95%;
-    padding: 0 .2em;
   }
 
     #post pre code {
