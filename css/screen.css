@@ -293,3 +293,5 @@ blockquote:after {
 .reviewrefer img { width: 150px; margin: 20px; padding:5px; background:#EFEFEF;}
 
 .reviewrefer img:hover { background:#666; }
+
+.notice { border: 1px solid #EE9999; padding:10px; color:red; text-align:center;}

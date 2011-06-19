@@ -7,6 +7,8 @@ h1(title). {{ page.title }}
 
 div(meta). 13th Feb 2011
 
+h3(notice). This article is out of date, please visit the "Android Couchbase github":https://github.com/couchbaselabs/Android-Couchbase for newer instructions.
+
 So you know why "CouchDB on mobile":http://www.couchbase.com/products-and-services/mobile-couchbase is an awesome fit, but getting CouchDB working on the device is only the first step, for it to be useful CouchDB needs to provide an easy and convenient way to be used on mobile devices. This is the first in a series of introductions to CouchDB on Android.
 
 <a href="https://market.android.com/details?id=com.arandomurl.couchnotes"><img src="https://ssl.gstatic.com/android/market/com.arandomurl.couchnotes/ss-0-320-480-160-0-17daaf2706f62e4bba05e73243b227e430d20bae" class="imgshadow" style="float:right;width:200px; margin-left:10px;" /></a>
