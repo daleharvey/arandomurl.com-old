@@ -7,7 +7,7 @@ h1(title). {{ page.title }}
 
 div(meta). 2nd April 2011
 
-If you are only here for <code>jquery.couch.js</code> documentation "then go get it quick":/random/jquery.couch.js-docs/symbols/$.couch.html
+If you are only here for <code>jquery.couch.js</code> documentation "then go get it quick":http://daleharvey.github.com/jquery.couch.js-docs/symbols/index.html
 
 I have a bit of an inclination for "generating documentation from source code":http://erldocs.com/, using as much information that can be infered as possible helps make sure the documentation is up to date, While I have spent a lot of time on Erlang documentation, I hadnt ever run across good generated Javascript documentation.
 
