@@ -17,7 +17,7 @@ Its a huge advantage to be able to regularly work with my peers outside the comp
 
 h3. "How do you get work done?"
 
-In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office forget about proper communications channels because you can bypass them and tap somebody on the shoulder, which leads to confusion as people are now out of the loop and without information they need to work, this problem becomes even worse as your company grows. Working remotely is impossible without proper communication channels, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Everyone will be forced to use these as a part of their daily workflow which helps combat the usual lack of adoption with office tools, when I am working remotely I feel a lot more confident I know what I need to do than in an office. There are times when its easier to work face to face particularly with more high level discussions and planning so I make sure to use as much of my time visiting the office to get these done.
+In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office to forget about proper communications channels because you can bypass them and tap somebody on the shoulder, which leads to confusion as people are now out of the loop and without information they need to work, this problem becomes even worse as your company grows. Working remotely is impossible without proper communication channels, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Everyone will be forced to use these as a part of their daily workflow which helps combat the usual lack of adoption with office tools, when I am working remotely I feel a lot more confident I know what I need to do than in an office. There are times when its easier to work face to face particularly with more high level discussions and planning so I make sure to use as much of my time visiting the office to get these done.
 
 h3. "Doesn't it affect your quality of life?"
 
@@ -37,7 +37,7 @@ h3. Hiring remotely?
 
  * If your company has a public face, then you get to reach a whole new community that it would be otherwise hard to break into.
 
- * Ensure people don't get isolated - Its very easy for developers to get sucked an area they are working on and forget to come back out and keep in sync with everyone else. Keep running daily updates even when there is no progress to report on.
+ * Ensure people don't get isolated - Its very easy for developers to get sucked into an area they are working on and forget to come back out and keep in sync with everyone else. Keep running daily updates even when there is no progress to report on.
 
  * Hire autonomous people - without being able to bikeshed every little detail in an office you need to hire people who are happy to make decisions to get things done and you need to trust in their ability to make them.
 
