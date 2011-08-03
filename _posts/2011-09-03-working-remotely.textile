@@ -11,17 +11,17 @@ For the last 5 years I have both hired and been hired to work remotely in variou
 
 h3. "Doesnt it get lonely?"
 
-This is probably the most common question which surprises me, I actually find working remotely is a lot more social. In Edinburgh there are a lot of startup companies and freelance developers who are in the same position and its quite common to cowork in a coffee shop together, there are also regular tech events during the week which generally end in the pub as well as a multitude of conferences to attend. I also make an effort to visit the office regularly.
+This is probably the most common question which surprises me since I actually find working remotely is a lot more socialable. In Edinburgh there are a lot of startup companies and freelance developers who are in the same position and its quite common to cowork in a coffee shop together, there are also regular tech events during the week which generally end in the pub as well as a multitude of conferences to attend. I also make an effort to visit the office regularly.
 
 Its a huge advantage to be able to regularly work with my peers outside the company as well as with my awesome coworkers, it means I am exposed to a whole new set of ideas and problems and gives me some fresh perspective into what I work on.
 
 h3. "How do you get work done?"
 
-In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office forget about proper communications channels because you can bypass them and tap somebody on the shoulder, this results in general confusion as it is easy for people to be out of the loop and what is worse is these problems grow exponentially as your company does. With remote workers communication channels need to be setup explicitly, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Working remotely forces people to use these tools as a part of their daily workflow, when I am working remotely I feel a lot more confident I know what I need to do than in an office.
+In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office forget about proper communications channels because you can bypass them and tap somebody on the shoulder, this easily turns into confusion as people are now out of the loop and without information they need to work, this problem becomes even worse as your company grows. Working remotely is impossible without proper communication channels, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Everyone will be forced people to use these tools as a part of their daily workflow which helps combat the usual lack of adoption with office tools, when I am working remotely I feel a lot more confident I know what I need to do than in an office. There are times when its easier to work face to face particularly with more high level discussions and planning so I make sure to use as much of my time visiting the office to get these done.
 
-h3. "Doesnt it effect your quality of life?"
+h3. "Doesn't it affect your quality of life?"
 
-It definitely does, I am a workaholic however I am also very much not a morning person, I generally wake up in the late morning and go outside to get some fresh air and exercise so by the time I sit down for work I am completely refreshed and awake, I also prefer to work late and find myself a lot more productive when there isnt a buzz of people milling around. The flexibility of my work day is a huge bonus for me, and not having to commute helps as well.
+I am a workaholic but not a morning person so my usual routine is to wake up in the late morning and go outside to get some fresh air + exercise so by the time I sit down for work I am refreshed and awake, I also prefer to work late and find myself a lot more productive when there isnt a buzz of people milling around. This obviously wouldnt suit everyone but the flexibility of being able to choose how I work in a way that suits me is a massive improvement over the time I spent working in a 9-5 office, also not having to commute is awesome.
 
 h3. Thinking of working remotely?
 
@@ -41,6 +41,6 @@ h3. Hiring remotely?
 
  * Hire autonomous people - without being able to bikeshed every little detail in an office you need to hire people who are happy to make decisions to get things done and you need to trust in their ability to make them.
 
-A lot of people are wary of the idea of distributed teams, for people who havent experienced it before its a strange concept that people can actually communicate better the further apart they are, but its not a coincedence that the most successful open source companies are distributed Red Hat, Canonical, Mozilla (and previously MySQL AB) to name a few as well as a growing number of tech startups such as 37 Signals and Automatix.
+A lot of people are wary of the idea of distributed teams, for people who havent experienced it before its a strange concept that people can actually communicate better the further apart they are, but its not a coincedence that the most successful open source companies are distributed "Red Hat":http://www.redhat.com/, "Canonical":http://www.canonical.com/, "Mozilla":http://www.mozilla.org/ (and previously "MySQL AB":http://en.wikipedia.org/wiki/MySQL_AB) to name a few as well as a growing number of tech startups such as "37 Signals":http://37signals.com/svn/posts/161-why-are-you-not-hiring-remote-workers, "Stack Overflow":http://www.codinghorror.com/blog/2010/05/on-working-remotely.html and "Automaticc":http://toni.org/2010/03/08/5-reasons-why-your-company-should-be-distributed/.
 
 The fact is if your company grows large enough it is going to have to learn to be a distributed company, why not get a head start?
