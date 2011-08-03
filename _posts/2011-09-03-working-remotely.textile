@@ -7,9 +7,9 @@ h1(title). {{ page.title }}
 
 div(meta). 3rd August 2011
 
-For the last 5 years I have both hired and been hired to work remotely in various positions, from co-founder at "Hypernumbers":http://hypernumbers.com to developer at "Couchbase":http://couchbase.com. It often surprises people when it comes up that I work 5000 miles from my office and I get asked a variety of questions along the lines of "Isnt it lonely?"  and "How do you get any work done?" so I thought it might be helpful to write down my experiences of working remotely.
+For the last 5 years I have both hired and been hired to work remotely in various positions, from co-founder at "Hypernumbers":http://hypernumbers.com to developer at "Couchbase":http://couchbase.com. It often surprises people when it comes up that I work 5000 miles from my office and I get asked a variety of questions along the lines of "Isn't it lonely?"  and "How do you get any work done?" so I thought it might be helpful to write down my experiences of working remotely.
 
-h3. "Doesnt it get lonely?"
+h3. "Doesn't it get lonely?"
 
 This is probably the most common question which surprises me since I actually find working remotely is a lot more socialable. In Edinburgh there are a lot of startup companies and freelance developers who are in the same position and its quite common to cowork in a coffee shop together, there are also regular tech events during the week which generally end in the pub as well as a multitude of conferences to attend. I also make an effort to visit the office regularly.
 
@@ -17,30 +17,30 @@ Its a huge advantage to be able to regularly work with my peers outside the comp
 
 h3. "How do you get work done?"
 
-In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office forget about proper communications channels because you can bypass them and tap somebody on the shoulder, this easily turns into confusion as people are now out of the loop and without information they need to work, this problem becomes even worse as your company grows. Working remotely is impossible without proper communication channels, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Everyone will be forced people to use these tools as a part of their daily workflow which helps combat the usual lack of adoption with office tools, when I am working remotely I feel a lot more confident I know what I need to do than in an office. There are times when its easier to work face to face particularly with more high level discussions and planning so I make sure to use as much of my time visiting the office to get these done.
+In terms of communication I think remote employees are a massive benefit to a company, it is easy in an office forget about proper communications channels because you can bypass them and tap somebody on the shoulder, this easily turns into confusion as people are now out of the loop and without information they need to work, this problem becomes even worse as your company grows. Working remotely is impossible without proper communication channels, seperate mailing lists for different working groups, bug trackers, project management tools and chat rooms for quick messaging. Everyone will be forced to use these as a part of their daily workflow which helps combat the usual lack of adoption with office tools, when I am working remotely I feel a lot more confident I know what I need to do than in an office. There are times when its easier to work face to face particularly with more high level discussions and planning so I make sure to use as much of my time visiting the office to get these done.
 
 h3. "Doesn't it affect your quality of life?"
 
-I am a workaholic but not a morning person so my usual routine is to wake up in the late morning and go outside to get some fresh air + exercise so by the time I sit down for work I am refreshed and awake, I also prefer to work late and find myself a lot more productive when there isnt a buzz of people milling around. This obviously wouldnt suit everyone but the flexibility of being able to choose how I work in a way that suits me is a massive improvement over the time I spent working in a 9-5 office, also not having to commute is awesome.
+I'm a workaholic, but I'm not a morning person. So, my usual routine is to wake up late in the morning and go outside to get some fresh air and exercise. This way, by the time I sit down for work, I am refreshed and awake. I also prefer to work late, and I find myself a lot more productive when there isn't a buzz of people milling around. This routine obviously wouldn't suit everyone but the flexibility of being able to choose how I work in a way that suits me is a massive improvement over the time I spent working in a 9-5 office, also not having to commute is awesome.
 
 h3. Thinking of working remotely?
 
- * If you arent experienced working remotely, by far the easiest way to learn how to do so is to work on an open source project.
+ * If you aren't experienced working remotely, by far the easiest way to learn how to do so is to work on an open source project.
 
- * Get active in the local community, nobody can handle long periods working alone and sometime IRC just doesnt cut it.
+ * Get active in the local community, nobody can handle long periods working alone and sometime IRC just doesn't cut it.
 
- * Be sensitive to the fact that people cant tap on your shoulder, be available across as many communication channels as possible and be liberable with how many updates you give your team.
+ * Be sensitive to the fact that people can't tap on your shoulder. Be available across as many communication channels as possible and be liberable with how many updates you give your team.
 
 h3. Hiring remotely?
 
- * Do it! You will be able to hire the best of the best, the world is a big place and there are a lot of great people that arent within commuting distance.
+ * Do it! You will be able to hire the best of the best, the world is a big place and there are a lot of great people that aren't within commuting distance.
 
  * If your company has a public face, then you get to reach a whole new community that it would be otherwise hard to break into.
 
- * Ensure people dont get isolated - Its very easy for developers to get sucked an area they are working on and forget to come back out and keep in sync with everyone else. Keep running daily updates even when there is no progress to report on.
+ * Ensure people don't get isolated - Its very easy for developers to get sucked an area they are working on and forget to come back out and keep in sync with everyone else. Keep running daily updates even when there is no progress to report on.
 
  * Hire autonomous people - without being able to bikeshed every little detail in an office you need to hire people who are happy to make decisions to get things done and you need to trust in their ability to make them.
 
-A lot of people are wary of the idea of distributed teams, for people who havent experienced it before its a strange concept that people can actually communicate better the further apart they are, but its not a coincedence that the most successful open source companies are distributed "Red Hat":http://www.redhat.com/, "Canonical":http://www.canonical.com/, "Mozilla":http://www.mozilla.org/ (and previously "MySQL AB":http://en.wikipedia.org/wiki/MySQL_AB) to name a few as well as a growing number of tech startups such as "37 Signals":http://37signals.com/svn/posts/161-why-are-you-not-hiring-remote-workers, "Stack Overflow":http://www.codinghorror.com/blog/2010/05/on-working-remotely.html and "Automaticc":http://toni.org/2010/03/08/5-reasons-why-your-company-should-be-distributed/.
+A lot of people are wary of the idea of distributed teams, for people who haven't experienced it before its a strange concept that people can actually communicate better the further apart they are, but its not a coincedence that the most successful open source companies are distributed "Red Hat":http://www.redhat.com/, "Canonical":http://www.canonical.com/, "Mozilla":http://www.mozilla.org/ (and previously "MySQL AB":http://en.wikipedia.org/wiki/MySQL_AB) to name a few as well as a growing number of tech startups such as "37 Signals":http://37signals.com/svn/posts/161-why-are-you-not-hiring-remote-workers, "Stack Overflow":http://www.codinghorror.com/blog/2010/05/on-working-remotely.html and "Automaticc":http://toni.org/2010/03/08/5-reasons-why-your-company-should-be-distributed/.
 
 The fact is if your company grows large enough it is going to have to learn to be a distributed company, why not get a head start?
