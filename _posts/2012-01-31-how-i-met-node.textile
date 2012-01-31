@@ -1,0 +1,43 @@
+---
+layout: post
+title: How I Met Node.js
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 31st January 2012
+
+In 2009 "Node.js":http://nodejs.org took Javascript out of the browser and turned it into a general purpose programming language, it wasnt the first (or likely the last) to do so but if you are using JavaScript outside the browser now chances are it is with Node.js. This is how I first got started with Node.js, and why I think its impact goes beyond arguing about spaghetti callbacks.
+
+Sometime around August 2010 I wanted to write an image sharing website, I forgot what existed at the time and why I didnt want to use it, but it was an excuse to play with the new HTML5 Drag and Drop API which was a good enough reason for me. I knew the server would be very simple, it just needed to save images and serve static webpages, I usually would have gone with a plain CouchDB App (CouchApp) which is perfectly suited for this job however I had been hearing a lot about Node.js so I figured I would try.
+
+I visited the home page - "http://nodejs.org":http://nodejs.org, it looked slightly different then but I was instantly impressed, there was a simple code snippet on the front page
+
+<pre><code>var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, "127.0.0.1");
+console.log('Server running at http://127.0.0.1:1337/');</code></pre>
+
+After running through the installation without any hiccups, I copied and pasted that code into a file, ran <code>$ node myserver.js</code> and opened http://127.0.0.1:1337/ in my browser, it was a very pleasant surprise to see node saying "Hello World" right back.
+
+After a little while fiddling around writing terrible code to parse and route HTTP requests, I realised I needed something a bit more elegant, I joined #node.js on IRC and showed them my code, someone quick replied suggesting I look at "express":http://expressjs.com/. Again when visiting its website I was instantly impressed, this brand new platform already had a friendly and easy to use web framework.
+
+Once deciding to use express, I had to figure figure out how to install it, I was given 2 commands:
+
+<pre><code>curl http://npmjs.org/install.sh | sh
+npm install express</code></pre>
+
+After a few hours of playing around, and 138 lines of code later I had written my image uploader, I put it live @ "http://dropup.net":http://dropup.net and been happily using it ever since.
+
+
+To put this on context I have been programming Erlang for 8+ years, the emphasis towards building real time interactive applications was not a new thing, I also slightly prefer Erlang to JavaScript as a language and hugely prefer the Erlang VM to Node.js as a platform. Despite that I continue to this day to lean towards Node.js for my new side projects, why?
+
+Its not because I love JavaScript, I barely even put up with JavaScript, it is because Ryan didnt just write a platform for people to use JavaScript, he created one of the best programming communities I have ever seen.
+
+Within months of Node.js being created it was easy to install, had a really well built package manager (which is now included in core), a fully featured web framework as well as all the other open source libraries I could possibly need[1], Its IRC channel was bustling and helpful and "Node Knockout":http://nodeknockout.com/ was inspiring programmers the world over to stop writing CRUD frameworks and start writing real time collaborative beat sequencers.
+
+Recently Ryan stepped down from leading the Node.js project and handed over the reigns to none other than NPM author Isaacs Schlueter, given Isaacs past contributions to the Node.Js community, I am at a loss to think how it could get any better, but I am sure it will.
+
+ [1] Matt Ranneys "node_pcap":http://howtonode.org/capturing-packets-in-javascript quickly became my favourite and most valuable HTTP debugging tool around.
