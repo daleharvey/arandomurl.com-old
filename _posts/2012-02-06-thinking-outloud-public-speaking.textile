@@ -1,0 +1,44 @@
+---
+layout: post
+title: Thinking Outloud - Public Speaking
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 6th February 2012
+
+As someone who works from home I find myself going to quite a few conferences and meetups, I help organise a local "TechMeetup":http://techmeetup.co.uk and have recently been given the opportunity to speak at a few conferences, along with my previous life as a co-founder I have spent quite a lot of time thinking about public speaking.
+
+With any line of work, being able to communicate is an important skill to have, public speaking is a great way to improve that skill and also comes with the benefits of being a great way to meet people, be exposed to interesting new ideas and raise the profile of a project or startup you are working on.
+
+I have spent a lot of time thinking about what makes talks interesting, whether
+worrying about my own talk, finding interesting speakers for TechMeetup and for just
+choosing what talks to go see at a conference. I can't offer a list of speaking tips, some of my talks have gone well and some have bombed, this is just an attempt to write down some of my observations and maybe learn some more along the way.
+
+h3. Good talks are often interactive.
+
+My main guage as to whether a talk has gone well is the amount of feedback the speaker gets during and after the talk. Interesting talks spawn interesting questions, often a speaker only needs to bring up an interesting idea and the rest of the content is generated from the audience. In particular I remember seeing the people behind "UnHosted":http://unhosted.org/ talk, with such a novel concept they had the audience bursting with questions and ideas.
+
+There are caveats though, larger crowds can be hesitant to provide questions during the actual talk (either through nervousness or technical challenges) so if you are speaking at larger conference, best to aim your talk to fill the allocated time.
+
+Another caveat is that sometimes questions turn into a conversation between 2 people, these can be quite specific and dont engage the rest of the audience, it is usually best to stop these quickly.
+
+h3. Typical presentation skills are overrated
+
+Most advice around public speaking skills focus on presentation skills, while useful some of my favourite talks have come from people who purposefully or not ignored that advice, I have seen Paul Irish talk a few times about Chrome developer tools, occasionally he left the audience hanging as he set up the next demo, occasionally he wasnt that clear when speaking, but he always had the crowd laughing at his on screen jokes and clapping when revealing another unknown feature.
+
+h3. Worry about the audience
+
+I have found that the more technical the conference is, the less speakers worry about the audience. Speaking about something interesting is not enough, you also need to think about what the audience is getting out of it, whether it be lessons you learned along the way or some new techniques they can use.
+
+Going to see somebody talk is a terrible way to learn a new tool, and such speakers shouldnt be trying to teach, they should be inspiring the audience to go home to learn it themselves. If you are presenting a new JavaScript library dont just explain what it does, explain how its different and why it does it better than the status quo.
+
+h3. Speak about what you know and what excites you
+
+I have been asked before to fill in for other speakers, this is a terrible idea. While some experienced speakers may be able to learn the content and present it with enough confidence to make it work, inexperienced speakers often need to make up for their lack of polish with enthusiasm and knowledge which is hard to do with content prepared by someone else. The best talks always come from the speakers own content and experiences.
+
+h3. What makes an interesting talk
+
+I feel that the best talks are ones that impart new ideas with the audience, they are the talks where the audience leave with a lot of questions and an itch to go home and put your new ideas to practice.
+
+Whether you are trying to promote your new startup, get more users for your new project/library, or are just speaking because you want to meet new people and help your career, if your main goal is to inspire your audience to go home and investigate something new you are off to a great start.
