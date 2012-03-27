@@ -42,3 +42,5 @@ h3. What makes an interesting talk
 I feel that the best talks are ones that impart new ideas with the audience, they are the talks where the audience leave with a lot of questions and an itch to go home and put your new ideas to practice.
 
 Whether you are trying to promote your new startup, get more users for your new project/library, or are just speaking because you want to meet new people and help your career, if your main goal is to inspire your audience to go home and investigate something new you are off to a great start.
+
+"Comment on Hacker News":http://news.ycombinator.com/item?id=3557046
