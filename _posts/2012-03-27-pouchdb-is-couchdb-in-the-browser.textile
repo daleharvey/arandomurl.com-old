@@ -1,0 +1,36 @@
+---
+layout: post
+title: Why PouchDB, CouchDB in the browser
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 27th March 2012
+
+I recently started working on the "PouchDB":https://github.com/mikeal/pouchdb project started by "@mikeal":https://twitter.com/#!/mikeal, While it is still in an early stage things are moving very quickly and I wanted to get the word out about why I think PouchDB is exciting and get some feedback about what will make up the release.
+
+h3. What is PouchDB?
+
+"PouchDB":https://github.com/mikeal/pouchdb is a Portable CouchDB, it is a near complete implementation of "Apache CouchDB":http://couchdb.apache.org/ that runs natively in the browser using "IndexedDB":https://developer.mozilla.org/en/IndexedDB as its storage mechanism, it has the same data model as CouchDB, the same conflict resolution and most importantly, it replicates with CouchDB.
+
+If you just want a nicer interface to IndexedDB then I would probably look at "Lawnchair":http://westcoastlogic.com/lawnchair/ or other wrappers over the IDB interface, however if you need a database with peer to peer sync then you will want to take a look at PouchDB.
+
+h3. Why?
+
+PouchDB exists so we can build web applications that work offline but sync with 'the cloud' you can work on a plane or a train with no internet connection, and when you are at an internet cafe and you login to your web app your data is there right as you would expect it.
+
+Over the last few years we have built an expectation that it is ok for web apps to not work without an internet connection and that Web technologies aren't suitable for 'real applications'. Mostly that has been down to a lack of tooling, browsers have not had the capabilities to build applications that work offline. However with widespread adoption of HTML5 technologies like "AppCache":http://www.html5rocks.com/en/tutorials/appcache/beginner/ and a healthy ecosystem for pushing the web stack further like Phonegap/"Apache Cordova":http://incubator.apache.org/callback/, that doesnt need to be the case anymore.
+
+It turns out that having applications that work offline come with a new set of problems, syncing data is really hard. You have to deal things like managing conflicts, unreliable networks while making sure you dont slow it down by syncing unnecesary data, you can read about "Cultured Codes problems building sync into Things here":http://culturedcode.com/things/blog/2010/12/state-of-sync-part-1.html.
+
+Luckily the people behind CouchDB have thought long and hard about these problems and came up with a data model that is ideal for syncing data as well as a robust server that can handle high loads. However the browser isnt a great place to run a HTTP server written in Erlang as nice as that would be. So PouchDB is a compatible implementation written in Javascript that can fit in perfectly to any browser app with a simple script tag.
+
+For the same reason that PouchDB exists, There are also native implementations for mobile developed at Couchbase, "TouchDB for iOS":https://github.com/couchbaselabs/TouchDB-iOS and "TouchDB for Android":https://github.com/couchbaselabs/TouchDB-Android. Hopefully soon wherever you need to sync your data there will be a native solution that fits into your application with ease.
+
+h3. Sounds awesome, where do I start?
+
+The PouchDB project is hosted on Github @ "https://github.com/mikeal/pouchdb":https://github.com/mikeal/pouchdb
+
+It is currently in a very early alpha and missing a few obvious features (like map reduce views and attachments), while it has an extensive test suite there are a lot of edge cases still to be tested. The core features like the CRUD interface and the ability to replicate are supported though and for browsers that dont support indexedDB, PouchDB can be used as a client to a remote CouchDB so although you do not get offline support, you can still work against a CouchDB server without changes to your code.
+
+Please feel free to checkout it out, try using it and get back to me with your feature requests and "issues":https://github.com/mikeal/pouchdb/issues (or pull requests!).
