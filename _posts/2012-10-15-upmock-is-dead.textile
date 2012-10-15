@@ -38,4 +38,6 @@ I have been keeping tabs on other projects doing similiar things, if anyone has 
  * "Picozu":http://www.picozu.com/editor - More graphically powerful but found extremely hard to use
  * "Typecast":http://beta.typecastapp.com/ - Focussed pretty much entirely on Type, really nice
 
+"Discuss this post on Hacker News":http://news.ycombinator.com/item?id=4654747
+
 P.S Gradient editing is broken in chrome, I have no idea why. Hat tip to anyone who figures it out :)
