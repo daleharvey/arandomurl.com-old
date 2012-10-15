@@ -1,0 +1,41 @@
+---
+layout: post
+title: UpMock is dead, long live UpMock
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 14th October 2012
+
+Every once in a while I try to design things, I have never been particularly good at it but I still regard design as a passion. While I dont pretend that bad tools are the reason I am not a designer I always felt that they could be much better tooling for web designers.
+
+Jason Santa Maria "explained these problems":http://v4.jasonsantamaria.com/articles/a-real-web-design-application/ much better than I could, to sumarise my complaints though:
+
+ * Graphic design tools like Photoshop don't render true to the browser, don't integrate with existing web content and dont have tools aimed towards designing for the web.
+ * Dreamweaver and other WYSIWG tools lack the graphical capabilities for designing websites.
+
+So on a rainy afternoon(quite common here in Scotland) I started building "UpMock":http://upmock.com. My aim was to build an open source tool capable of producing high fidelity static website mockups. The focus on static websites was important for me, I have seen many projects before this quickly redirect their attention to outputting publishable website. While I do think WYSIWG publishing should exist, building a tool that outputs usable code (without infinite resources) almost certainly means cutting corners when it comes to providing the power and flexibility on the graphical editing side of things. I wanted to solve the problem of producing designs, not code.
+
+<a href="http://upmock.com"><img src="/random/upmock.png" style="margin-left:-110px;" /></a>
+
+After a few weeks coding I ended up producing something I was quite happy with as a prototype, I had also left my job in the meantime and was seriously considering turning UpMock into my next startup venture. However before I could do anything about it I had been offered a dream job, and while I still think UpMock could have turned into a really succesful project, the chance to work on Boot2Gecko excited me much more.
+
+UpMock currently has some pretty nice features:
+
+ * Editable 960gs style grid
+ * Snapping to grid + elements
+ * Keyboard shortcuts (matching Photoshops in places)
+ * Google Webfont integration
+ * HTML elements (forms)
+ * Colour picker + Gradient editor
+
+One of the reasons I love open source is that when an author leaves a project the project can live on. If you would like to use UpMock as a base it has always been on "Github":https://github.com/daleharvey/upmock.
+
+I have been keeping tabs on other projects doing similiar things, if anyone has any to add to this list then please do, as yet I am still waiting for that killer web design tool but some of these have promise:
+
+ * "Easel":https://www.easel.io/demo - Really well done, nice implementation of editing styles, still lacking graphical capabilities.
+ * "Stylo":http://styloapp.com/ - Similiar in functionality to UpMock, more polished UI
+ * "Picozu":http://www.picozu.com/editor - More graphically powerful but found extremely hard to use
+ * "Typecast":http://beta.typecastapp.com/ - Focussed pretty much entirely on Type, really nice
+
+P.S Gradient editing is broken in chrome, I have no idea why. Hat tip to anyone who figures it out :)
