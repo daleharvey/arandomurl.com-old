@@ -1,0 +1,82 @@
+---
+layout: post
+title: Thoughts on IndexedDB
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 21st Feb 2013
+
+I recently read an email on the "www-tag mailing list":http://lists.w3.org/Archives/Public/www-tag/2013Feb/0003.html asking for what went wrong with IndexedDB(IDB) as since its conception it has had a lot of criticism aimed at it, by working on "PouchDB":http://pouchdb.com/ I have got pretty familiar with the IDB API so I thought I should write down some of my thoughts.
+
+h3. Cross Browser problems
+
+As with any new API on the web there were cross browser differences, Chrome took a while to implement <code>onupgradeneeded</code> over <code>setVersion</code>, in PouchDB we will need to support transaction constants (for Chrome for Android), as well as "various bugs":https://code.google.com/p/chromium/issues/detail?id=136400 and "surprising behaviours":https://bugzilla.mozilla.org/show_bug.cgi?id=770844.
+
+These are to be expected in new APIs and have been getting fixed reasonably quickly, the remaining issues that I am paying attention to are: 
+
+ * IE10 takes up to 400ms to delete a recently deleted database.
+
+ * Chrome doesnt support the "storing of Blobs":http://code.google.com/p/chromium/issues/detail?id=108012.
+
+ * Storing large objects in Chrome massively degrades performance.
+
+ * Chrome has a weird "temporary storage":https://developers.google.com/chrome/whitepapers/storage#temporary limit that cant be raised. 
+
+h3. Missing API's
+
+There has been a few seemingly obvious ommissions in the API:
+
+ * No way to enumerate databases. (in progress)
+
+ * No change events. (this can be worked around using "localStorage events, yes they exist!":http://html5demos.com/storage-events)
+
+h3. Event Loop Based Transactions
+
+The transaction system for IDB can be confusing, you create a transaction context that is held open until you hit a callback that does not issue a database request. This isnt very well documented and almost every example fails to wait until the transaction is complete before continuing which ca easily lead to broken transactions contexts.
+
+Another issue with is is that if you at any point want to change your code to use something asynchronous inside a transaction it can force you into a large change to how your code is structured at that point.
+
+This event loop system hopes to ensure developers cant accidently leave transactions open however that is still possible whether accidently or on purpose as "Joshua points out":http://code.google.com/p/chromium/issues/detail?id=108012#c52:
+
+<pre><code>// set to false to allow transaction to finish
+var keep_alive = true;
+
+(function keepAlive() { 
+  if (keep_alive) {
+    transaction.objectStore(store).get(0).onsuccess = keepAlive;
+  }
+}());</pre></code>
+
+
+I have asked about an option to open transactions with explicit_close option, it seems like an unpopular suggestion however when given above workaround of a busy callback loop it may be given an extra thought.
+
+h3. Complex API
+
+IDB is undoubtably complex, with bounded queries, indexes, schemas and transactions and while the lack of consistent and thorough documentation hasnt helped much I do think the plain design of the API has to take a lot of the blame. Once you have to consider calling something "IDBFactory":https://developer.mozilla.org/en-US/docs/IndexedDB in a developer facing Web API its probably time to sit back and think through the API again. I am pretty confident the same functionality could be provided in a much simpler manner.
+
+h3. Its JavaScript
+
+and JavaScript sucks, while some may argue that callback hell doesnt exist working with IndexedDB makes the fact more obvious. We may be saved by the "Synchronous IDB API":http://www.w3.org/TR/IndexedDB/#sync-database or "Generators":https://developer.mozilla.org/en-US/docs/JavaScript/New_in_JavaScript/1.7#Generators, but the former doesnt yet exist and the latter isnt widely usable.
+
+h3. However...
+
+Despite all the criticism, the above complaints are relatively minor issues. I think as with the "AppCache API":http://alistapart.com/article/application-cache-is-a-douchebag a lot of the complexity isnt immediately obvious and IDB actually gets a lot right: <code>onupgradeneeded</code> in particular is very important when building something complex like PouchDB on top of IDB, it has consistent transactions across tabs, indexes are certainly nice and while the API is confusing initially it doesnt take long to get used to.
+
+h3. Middle Ground
+
+I think a lot of the fustration is that a lot of developers didnt need the complexity of IDB, they just wanted a localStorage replacement that doesnt suck, one that isn't synchronous, lets you store JSON without arbitrary restrictions and maybe let you do a bounded key query.
+
+h3. High Level vs Low Level API Design
+
+A lot of the answers to missing features and APIs has been 'it can be solved by a library' to much dismay of web developers who dont think libraries should be needed to use Web APIs.
+
+This I disagree with, browsers are already hugely complex beasts and every new API is a huge cost in terms of complexity and maintenance, it is unsustainable to try and keep adding every pet wish to the platform. We have already learned that large standard libraries are "where modules go to die":http://www.leancrew.com/all-this/2012/04/where-modules-go-to-die/ whereas a small but powerful library promotes a "huge amount of 3rd party innovation":https://npmjs.org/.
+
+IndexedDB isnt perfect, but it gives us the primitives we need to build powerful and friendly libraries. I for one hope we stop pushing the browser vendors into producing libraries to let them focus on the "core capabilities":https://wiki.mozilla.org/WebAPI/FileHandleAPI of the web platform and leave the opinionated high level APIs to the rest of the web.
+
+(Mark Boas also wrote about this "relating to the Audio Data API":http://happyworm.com/blog/2011/11/15/html5-audio-apis-how-low-can-we-go/)
+
+
+
+
