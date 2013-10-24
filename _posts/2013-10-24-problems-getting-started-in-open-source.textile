@@ -1,0 +1,61 @@
+---
+layout: post
+title: Problems getting started in Open Source
+---
+
+h1(title). {{ page.title }}
+
+div(meta). 24th Oct 2013
+
+From the start of my career Open Source has been great to me, from mentors who helped my first ever contributions to Inkscape as part of the first Google Summer of Code through to the people I worked with on CouchDB + PouchDB and Firefox OS I have had the opportunity to be helped by some of the best developers (and people) around.
+
+Recently I have been invited to help take part in various projects related to helping people contribute to Open Source projects, they were exciting to be a part of and the hands on workshops worked great however at the same time I left realising that we could do a hell of a lot better to help people who really want to be part of the Open Source community.
+
+I recently ran a questionnaire @ "goodfirstpatch.com":http://goodfirstpatch.com to try and learn what contributors motivations and goals are, for these questions I wanted people to put down their own words, but I have split the answers into a few common buckets and ordered them roughly by popularity.
+
+h3. Why are you interested in contributing to Open Source?
+
+ * I benefit a lot and want to give back 
+ * Open source is a force for good
+ * I want to produce great software and fix bugs in software I am using
+ * I want to be part of a community
+ * I want to learn from others
+ * I want to build my profile / reputation as it will help my career (and ego)
+ * I want power over my tools
+
+I found it surprising that 'learn' was comparatively low down considering how much personally I have been taught, but it was great to see that even if people have problems contributing they can still see the value in what it brings.
+
+h3. Have you tried contributing before, what was your experience?
+
+ * Couldnt get project to build / run
+ * Didnt know where to get started 
+ * Nervous about speaking up / asking 'silly' questions
+ * Worried about not being good enough
+ * Intimidated / Scared about elitism
+ * 'I was hungover, it didn't work  well'
+
+Most of the people who had contributed had either filed bugs, published their own projects or fixed documentation or typos before moving on to bigger contributions, they almost all mentioned how positive those contributions were received as well.
+
+h3. Is theres anything you feel would help you create your first patch?
+
+ * A 'getting started guide' 
+ * A list of good first issues to work on
+ * Direct contact with a contributor / maintainer
+ * Proven installation guide
+ * Clear and detailed guide to submitting patches
+ * General project documentation
+ * Early feedback on any contribution
+
+In this case the 'getting started guide' and issue list were both in the vast vast majority.
+
+The direct contact with a maintainer was also very high up, although IRC + bug tracker + mailing list are the standard communication tools for Open Source projects, a lot of people responded that they were too worried about asking questions in public that may make them appear stupid, this also correlates with my experiences teaching workshops in which people just need a few little getting started questions answered and then following that they become comfortable using the more standard public channels.
+
+h3. GoodFirstPatch.com
+
+I am aiming to turn "goodfirstpatch.com":http://goodfirstpatch.com into a resource that helps people make their first contributions to open source, we need both help for contributors but also guidance for project maintainers to make sure that they can create projects that are as easy as possible to contribute to.
+
+There are plenty of ideas, automatic listings of issues identified as good for beginners, explanations for how contributions work, templates and examples for maintainers create README / CONTRIBUTING files, guides to creating a pull request etc. 
+
+If you have an Open Source project and are interested in helping out new contributors then please add your project too - "http://goodfirstpatch.com/contributors.html":http://goodfirstpatch.com/contributors.html
+
+And if you are interested in getting involved, giving ideas or discussing the plans for goodfirstpatch.com, please get involved @ "https://github.com/daleharvey/goodfirstpatch/issues":https://github.com/daleharvey/goodfirstpatch/issues
